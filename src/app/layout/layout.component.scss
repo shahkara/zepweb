@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+
+*{
+    font-family: "Bellefair", serif;
+
+}
+.footer li {
+    padding:  10px 0;
+
+}
+
+@media screen and (min-width:200px)  and (max-width:600px){
+    .heroSection{
+        background-position: center;
+        background-size: cover;
+    }
+    
+}
+@media screen and (min-width:610px)  and (max-width:900px){
+    .heroSection{
+        background-position: 80% 7%;
+        background-size: contain;
+    }
+    
+}
+@media screen and (min-width:765px) and (max-width:1280px) {
+    .heroSection{
+        background-position: 80% 15%;
+        background-size: contain;
+    }
+    
+}
+
+@media screen and (width:280px)  {
+    .logo{
+       width: 80px;
+    }
+   }
+
+
+
+
+.slide img {
+    max-width: 300px;
+    max-height: 250px;
+}
+.slide {
+
+    margin-left: 2px;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+
+  
