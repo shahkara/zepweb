@@ -1,8 +1,12 @@
 import { Component ,OnInit} from '@angular/core';
-import { initFlowbite } from 'flowbite';
 
 interface slider {
   img: string;
+}
+
+interface accordionItem {
+  title: string;
+  description:string;
 }
 @Component({
   selector: 'app-layout',
@@ -16,6 +20,15 @@ export class LayoutComponent implements OnInit {
     {img: '/assets/slider/image3.png'},
     {img: '/assets/slider/image4.png'},
     {img: '/assets/slider/image5.png'},
+    
+  ];
+
+  accordionItems: accordionItem[] = [
+    {title:'What is ZepCode?', description:"ZepCode is a product-based company known for its innovative solutions in various industries." },
+    {title:'What if I encounter issues with a ZepCode product?', description:"If you experience any issues with a ZepCode product, our customer support team is available 24/7 to assist you." },
+    {title:' Is there a loyalty program for ZepCode customers?', description:"Yes, ZepCode offers a loyalty program for regular customers, providing exclusive benefits, discounts, and rewards for continued support.." },
+   
+  
     
   ];
   slideConfig = {
@@ -34,12 +47,17 @@ export class LayoutComponent implements OnInit {
     slidesToScroll: 1,
 
     infinite: true,
+
   }
+  activeIndex: number | null = null;
+
 
   constructor(){}
   ngOnInit(): void {
-    initFlowbite();
 
+  }
+  toggleAccordion(index: number): void {
+    this.activeIndex = this.activeIndex === index ? null : index;
   }
 
 
