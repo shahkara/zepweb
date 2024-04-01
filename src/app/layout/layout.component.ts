@@ -14,6 +14,8 @@ interface accordionItem {
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  showModal = false;
+
   slides: slider[] = [
     {img: '/assets/slider/image1.png'},
     {img: '/assets/slider/image2.png'},
@@ -60,5 +62,14 @@ export class LayoutComponent implements OnInit {
     this.activeIndex = this.activeIndex === index ? null : index;
   }
 
+  openModal() {
+    this.showModal = true;
+
+  }
+
+  closeModal() {
+    this.showModal = false;
+
+  }
 
 }
