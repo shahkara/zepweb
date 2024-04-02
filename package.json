@@ -8,9 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run zepcode:serve-ssr",
-    "serve:ssr": "node dist/zepcode/server/main.js",
+    "serve:ssr": "pm2 start dist/zepcode/server/main.js",
     "build:ssr": "ng build && ng run zepcode:server",
-    "prerender": "ng run zepcode:prerender"
+    "prerender": "ng run zepcode:prerender",
+    "vercel-build":"npm run build:ssr"
   },
   "private": true,
   "dependencies": {
