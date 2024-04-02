@@ -89,7 +89,10 @@ export class BootcampComponent  implements OnInit{
           Validators.maxLength(10),
         ],
       ],
-      enquiryFrom: ['Zepcode'],
+      Message:[''],
+      QueryType:' Zepcode Bootcamp Enquiry',
+
+      enquiryFrom: ['Zepcode Bootcamp'],
     });
   }
 
