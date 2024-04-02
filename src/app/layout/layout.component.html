@@ -1,3 +1,54 @@
+<div
+*ngIf="SubmitSuccessful"
+id="toast-success"
+class="z-10 fixed top-5 right-5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-orange-300 rounded-lg shadow"
+role="alert"
+>
+<div
+  class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg"
+>
+  <svg
+    class="w-5 h-5"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+    />
+  </svg>
+  <span class="sr-only">Check icon</span>
+</div>
+<div class="ms-3 text-sm text-white font-normal">
+  Submitted successfully.
+</div>
+<button
+  type="button"
+  (click)="closeToast()"
+  class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 "
+  data-dismiss-target="#toast-success"
+  aria-label="Close"
+>
+  <span class="sr-only">Close</span>
+  <svg
+    class="w-3 h-3"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 14 14"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+    />
+  </svg>
+</button>
+</div>
+
 <ng-container  class="  bg-[#fdfdff]">
     <section style="background-image: url('/assets/heroScetion/heroSection.png');" class=" xl:bg-cover heroSection bg-no-repeat ">
   
@@ -9,9 +60,9 @@
     </div>
     <div>
   
-      <button class="shadow-md p-2 sm:p-2 text-white border-2 rounded-md bg-[#ff6600] hover:bg-[orange] "> 
-        Get started a Project
-      </button>
+     
+      <button (click)="openModal()" class="shadow-md text-2xl p-2 text-white rounded-md bg-[#ff6600] hover:bg-[orange] "> 
+        Get started a Project          </button>
     </div>
    
    
@@ -20,11 +71,12 @@
   
   </div>
   <div class="px-4  text-center ">
-    <h1 class="uppercase text-2xl text-[#FF6600]">Let’s shift your business </h1>
+    <!-- <h1 class="uppercase text-2xl text-[#FF6600]">Let’s shift your business </h1> -->
   
-    <h1 class="mb-4 mt-4 sm:mt-10 text-4xl tracking-tight leading-no md:text-5xl xl:text-7xl">Where <span class="text-[#FF6600]">Products</span> Exceed  <span class="text-[#FF6600]">Expectations</span></h1>
-    <p class="mb-8  mt-10 text-lg font-normal md:mt-20 text-gray-500 lg:text-2xl sm:px-16 xl:text-3xl lg:px-52 xl:px-64">At ZepCode, we make products you can rely on. From everyday essentials to innovative solutions, quality is our priority. Explore our range and experience the difference today!</p>
-      <button [routerLink]="'bootcamp'" class="shadow-md relative z-10 -left-18 top-28 text-xl sm:text-xl px-6 py-2  font-semibold sm:mt-10 text-white hover:text-[#ff6600] rounded-lg bg-[#ff6600] hover:bg-[white] "> 
+    <h1 class="mb-4 mt-4 sm:mt-10 text-4xl tracking-tight leading-no md:text-5xl xl:text-7xl">Where <span class="text-[#FF6600]">Training</span> Exceeds  <span class="text-[#FF6600]">Industry Expectations</span></h1>
+    <p class="mb-8  mt-10 text-lg font-normal md:mt-20 text-gray-500 lg:text-2xl sm:px-16 xl:text-3xl lg:px-52 xl:px-64">
+      At zepcode, we not only train, we handhold and mentor learners to carve a clear career path to excel in IT industry    </p>
+      <button [routerLink]="'bootcamp'" class="shadow-md relative z-10 -left-18 top-28 text-xl sm:text-4xl px-6 py-2  font-semibold sm:mt-10  text-[#ff6600] rounded-lg bg-[white] "> 
         Explore Our Bootcamp
       </button>
          
@@ -32,7 +84,7 @@
   <div class=" bg-[white] "  >
 
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-        <div *ngFor="let items of this.slides">
+        <div *ngFor="let items of this.slides" class="border image">
           <div ngxSlickItem class="slide">
             <img [src]="items.img" alt="company_img" />
           </div>
@@ -45,18 +97,19 @@
   
   
   <div class="text-center sm:mt-20 my-5  sm:mb-16">
-    <h1 class="mb-8  mt-10 text-xl font-normal text-[#161C2D] lg:text-4xl xl:text-5xl sm:px-16 md:text-5xl lg:px-64">About Zepcode Private Limited</h1>
+    <h1 class="mb-8  mt-10 text-3xl font-normal text-[#161C2D] lg:text-4xl xl:text-5xl sm:px-16 md:text-5xl lg:px-64">About Zepcode Private Limited</h1>
   </div>
   <div class="grid sm:grid-col-1 md:grid-cols-2 xl:px-32 gap-10 sm:px-32 md:px-16 px-4">
   
   
-      <div class="flex  flex-col items-center md:py-6 lg:py-2">
-        <img src="/assets/services/contentWriting.png"  alt="">
+      <div class="flex  rounded-lg flex-col items-center md:py-6 lg:py-2">
+        <img src="/assets/shahkar.png" class="rounded-lg"  alt="">
   
       </div>
      
   <div class="md:py-4">
-    <h1 class="text-[#23242A] text-2xl sm:text-4xl lg:text-3xl md:text-xl xl:text-3xl">At our company, we're all about passion and innovation. From the start to now, we're committed to making great products that go above and beyond. </h1>
+    <h1 class="text-[#23242A] text-2xl sm:text-4xl lg:text-3xl md:text-xl xl:text-3xl">
+      We are a bunch of passionate IT experts with experience spanning tens of years.  It's our endeavor to prepare learners according to the latest industry requirements and beyond.    </h1>
     <p class="text-[#23242A] md:py-2  py-4 sm:py-10 lg:py-7 text-xl xl:text-xl  md:text-sm">Whether it's through innovative design, superior quality, or unmatched reliability, our goal is always the same: to exceed expectations and leave a lasting impression. </p>
     <p class="text-[#23242A] text-xl md:text-sm  xl:text-xl"> Join us on our journey as we continue to push boundaries, inspire change, and make the world a better place, one product at a time. </p>
   </div>
@@ -97,10 +150,10 @@
   <section  class="bg-[#f4f7fa]  bg-no-repeat  mt-10" >
   <div class="text-center">
   <h1 class="text-[#FF6600] pt-10">
-    BOOTCAMP
+    <!-- BOOTCAMP -->
   </h1>
   <h1 class=" text-2xl sm:text-4x md:text-3xl  lg:text-4xl m-4">
-    Zepcode <span class="text-[#FF6600] "> Full Stack Development Bootcamp</span> Program
+    Full Stack <span class="text-[#FF6600] ">  Development Corporate </span> Program
   </h1>
   </div>
   <div class="grid md:gap-1 gap-10 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 xl:px-32 px-4 md:px-16 sm:px-32">
@@ -109,36 +162,48 @@
             <img src="/assets/bootcampPage/mern.png" class=" rounded-xl"  alt=""><br>
 
         </div>
-  <button  class="py-2.5 sm:mt-14 md:text-3xl  lg:text-2xl sm:text-3xl px-5 me-2 mb-2  font-medium text-[#000000] focus:outline-none bg-white rounded-full border-2 border-orange-600 hover:bg-gray-100 hover:text-orange-500  ">Batch Starts on 4th March 2024</button>
+  <button  class="py-2.5 sm:mt-14 md:text-3xl  lg:text-2xl sm:text-3xl px-5 me-2 mb-2  font-medium text-[#000000] focus:outline-none bg-white rounded-full border-2 border-orange-600 hover:bg-gray-100 hover:text-orange-500  "> Next Batch Starts on 15th April 2024</button>
   
     </div>
     <div class=" my-1 sm:my-10">
       <div class="grid gap-12  sm:grid-cols-1 mb-10 md:grid-cols-2">
   
   
-        <div class="max-w-sm  m-auto lg:p-5 p-6 bg-white border-t-4 border-orange-500 shadow-lg ">
-        <img src="/assets/bootcamp/bootcampIcon.png" alt="">
-             <h5 class="my-4 text-xl lg:text-2xl lg:my-2 md:text-xl md:my-1  tracking-tight text-[#161C2D] ">100+ Career Transition </h5>
-          <p class="mb-3 font-normal md:text-sm  text-gray-500">Experience seamless career transition with our comprehensive bootcamp program. </p>
+        <div class="max-w-sm hover:shadow-2xl text-center group sm:text-left  m-auto lg:p-5 p-6 bg-white border-t-4 border-orange-500 shadow-lg ">
+          <div class="flex justify-center sm:justify-start  ">
+            <img src="/assets/bootcamp/bootcampIcon.png" alt="">
+
+          </div>
+             <h5 class="my-4  text-xl lg:text-2xl lg:my-2 md:text-xl md:my-1  tracking-tight text-[#161C2D] ">100+ Career Transition </h5>
+          <p class="mb-3 font-normal md:text-sm   text-gray-500">Experience seamless career transition with our comprehensive bootcamp program. </p>
           
       </div>
       
-      <div class="max-w-sm p-6 lg:p-5  m-auto  bg-white border-t-4 border-orange-500 shadow-lg ">
-        <img src="/assets/bootcamp/bootcampIcon.png" alt="">
+      <div class="max-w-sm p-6 lg:p-5  hover:shadow-2xl text-center sm:text-left m-auto  bg-white border-t-4 border-orange-500 shadow-lg ">
+        <div class="flex justify-center sm:justify-start">
+          <img src="/assets/bootcamp/bootcampIcon.png" alt="">
+          </div>
+
              <h5 class="my-4 text-xl lg:text-2xl lg:my-2 md:text-xl md:my-1  tracking-tight text-[#161C2D] ">33% Salary Hike </h5>
           <p class="mb-3 font-normal md:text-sm  text-gray-500">Increase your salary by 33% with our program. Take the next step in your career and boost your earning potential.</p>
           
       </div>
       
-      <div class="max-w-sm p-6 lg:p-5 m-auto bg-white border-t-4 border-orange-500 shadow-lg ">
+      <div class="max-w-sm p-6 lg:p-5 hover:shadow-2xl text-center sm:text-left m-auto bg-white border-t-4 border-orange-500 shadow-lg ">
+        <div class="flex justify-center sm:justify-start">
+
         <img src="/assets/bootcamp/bootcampIcon.png" alt="">
+        </div>
              <h5 class="my-4 text-xl lg:text-2xl lg:my-2 md:text-xl md:my-1  tracking-tight text-[#161C2D] ">10 LPA Annual Salary </h5>
           <p class="mb-3 font-normal md:text-sm  text-gray-500">Get a 10LPA annual salary with our program. Start your journey to financial stability and career growth.</p>
           
       </div>
       
-      <div class="max-w-sm p-6 g:p-5 m-auto bg-white border-t-4 border-orange-500 shadow-lg ">
+      <div class="max-w-sm p-6 g:p-5  hover:shadow-2xl text-center sm:text-left m-auto bg-white border-t-4 border-orange-500 shadow-lg ">
+        <div class="flex justify-center sm:justify-start">
+
         <img src="/assets/bootcamp/bootcampIcon.png" alt="">
+        </div>
              <h5 class="my-4 text-xl lg:text-2xl lg:my-2 md:text-xl md:my-1 tracking-tight text-[#161C2D] ">600+ hours session </h5>
           <p class="mb-3 font-normal md:text-sm  text-gray-500">Join our program for 600+ hours of sessions. Learn essential skills to boost your career in simple, easy-to-follow sessions.</p>
           
@@ -162,9 +227,9 @@
   </div>
   <div class=" text-left sm:text-right md:pr-0 pr-20 px-2 py-2 sm:py-12">
   
-    <button class="shadow-md  text-white p-3 text-2xl rounded-md bg-[#ff6600] hover:bg-[orange] "> 
-    Register Now
-    </button>
+    <button (click)="openModal()" class="shadow-md text-2xl p-4 text-white rounded-md bg-[#ff6600] hover:bg-[orange] "> 
+      Contact Us
+        </button>
   </div>
   
     </div>
@@ -288,7 +353,7 @@
   
   <section class="sm:mt-10 md:mt-5 bg-[#fdfdff] ">
     <div class="text-center">
-      <h1 class="text-[#FF6600] pt-2 sm:pt-10">
+      <h1 class="text-[#FF6600] text-xl sm:text-2xl pt-2 sm:pt-10">
         Our work shows why we're the best in the business.
       </h1>
       <p class=" text-[#161C2D] md:px-10 md:py-5 sm:px-96 px-1 text-2xl sm:text-4xl py-10">
@@ -296,46 +361,62 @@
       </p>
     </div>
     <div class=" grid  xl:px-32 md:grid-cols-2   py-1 sm:py-10 px-4 md:px-16 sm:px-32 ">
-  
-      <div  class="border-red-500  xl:justify-start  justify-center  " >
+  <div>
+
+ 
+      <div  class=" " >
         <div class="md:px-10  xl:px-10  pr-3 rounded-xl">
+<a href="https://stylup.in/" target="_blank">
+
 
         <img src="/assets/products/first.png" class="rounded-xl" alt="">
+      </a>
         </div>
-        <h1 class="text-[#161C2D]  mb-10 text-center sm:mb-0 sm:text-left text-2xl md:text-xl px-20 pt-4">
+        <h1 class="text-[#161C2D] text-center text-2xl  md:text-xl pt-4 mb-6">
             Stylup
           </h1>
       </div>
   
-      <div class="border-red-500 flex  flex-col  pb-10 md:pl-10 sm:pl-20 " >
+      <div class=" " >
         <div class="md:px-10  xl:px-10 pr-3 rounded-xl">
+<a href="https://www.couchstays.com/" target="_blank">
 
-        <img src="/assets/bootcamp/Img.png " class="rounded-xl" alt="">
+  <img src="/assets/bootcamp/Img.png " class="rounded-xl" alt="">
+</a>
         </div>
       
-        <h1 class="text-[#161C2D] text-2xl md:text-xl px-20 pt-4">
+        <h1 class="text-[#161C2D] text-center text-2xl md:text-xl mb-6 pt-4">
           CouchStays Website
         </h1>
       </div >
-      <div class="border-red-500   xl:justify-start justify-center sm:py-20 "  >
+    </div>
+    <div>
+
+   
+      <div class=" "  >
         <div class="md:px-10 4 xl:px-10 pr-3 rounded-xl">
+<a href="https://theyouthwear.com/" target="_blank">
+
 
         <img src="/assets/products/second.png"  class="rounded-xl" alt="">
+      </a>
         </div>
-        <h1 class="text-[#161C2D]  mb-10 text-center sm:mb-0 sm:text-left text-2xl md:text-xl px-20 pt-4">
+        <h1 class="text-[#161C2D] text-center text-2xl md:text-xl  pt-4 mb-6">
             YouthWear
           </h1>
       </div>
-      <div class="border-red-500  md:-mt-10 xl:-mt-30 sm:-mt-20 md:pl-10 sm:pl-28"  >
+      <div class=""  >
         <div class="md:px-10  xl:px-10 pr-3  rounded-xl">
+<a href="https://play.google.com/store/apps/details?id=com.app.couchStayOnetick" target="_blank">
 
-        <img src="/assets/products/third.png" class="rounded-xl" alt="">
+  <img src="/assets/products/third.png" class="rounded-xl" alt="">
+</a>
         </div>
-        <h1 class="text-[#161C2D] text-2xl md:text-xl px-20 pt-4">
+        <h1 class="text-[#161C2D] text-center text-2xl md:text-xl  pt-4">
             CouchStays App
           </h1>
       </div>
-  
+    </div>
   
     </div>
    
@@ -345,19 +426,202 @@
   <section class="mt-10 ">
   <div class=" grid sm:grid-cols-1 xl:mx-32 md:mx-16  md:grid-cols-3  mx-2 sm:mx-32 px-4 sm:px-8 py-1 sm:py-4  shadow-sm border rounded-xl">
   <div class=" col-span-2">
-    <h1 class="text-xl xl:text-4xl pt-6 pb-2"> <span class="text-[#FF6600]">
-      Together
-    </span>, let's shape the future of digital innovation</h1>
+    <h1 class="text-3xl xl:text-4xl pt-6 pb-2"> <span class="text-[#FF6600]">
+       Give yourself an
+    </span> opportunity to shape your own future</h1>
     <p class="text-[#4C4C4D] xl:text-2xl">
-        Come join us on this thrilling learning adventure and discover your potential<br> in design and development.    </p>
+      Do not search for job, let jobs search you!!         </p>
   </div>
   
-  <div class="text-right py-12">
+  <div class="text-right py-12" >
   
-    <button class="shadow-md text-2xl p-4 text-white rounded-md bg-[#ff6600] hover:bg-[orange] "> 
+    <button (click)="openModal()" class="shadow-md text-2xl p-4 text-white rounded-md bg-[#ff6600] hover:bg-[orange] "> 
   Contact Us
     </button>
+    
+
+</div>
+ 
+<div class="fixed z-50  overflow-y-auto    top-0 w-full left-0   " tabindex="-1" *ngIf="showModal">
+            
+  <div >
+    <div
+    class="     h-[100vh]  bg-gray-500 bg-opacity-75 text-right "
+  >
+        <button
+          (click)="closeModal()"
+          class="mt-4 p-2 mr-8 sm:mr-20 bg-[#ff6600] hover:bg-[orange] text-white rounded-md"
+        >
+          Close
+        </button>
+
+       
+        <div class="p-4 rounded-lg shadow ">
+          <div class=" sm:flex sm:justify-center text-left ">
+            <div class="bg-white border rounded-lg  p-4 ">
+              <h1 class="text-center font-semibold m-2 border-b p-2 mb-4">Fill Your Details</h1>
+              <form [formGroup]="contactUsForm" (ngSubmit)="submit()">
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative   mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class=" block mb-2 text-sm font-medium text-gray-900 "
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                        id="base-input"
+                        placeholder="Enter First Name"
+                        formControlName="firstname"
+                        (keypress)="omit_special_char($event)"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['firstname'].touched) &&
+                        contactUsForm.controls['firstname'].errors?.['required']"
+                        >First name is Required *</span
+                      >
+                    </div>
+                  </div>
+                  <div class="relative   mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Last Name</label
+                      >
+                      <input
+                        type="text"
+                        id="base-input"
+                        placeholder="Enter Last Name"
+                        formControlName="lastname"
+                        (keypress)="omit_special_char($event)"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative   mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Email</label
+                      >
+                      <input
+                        type="text"
+                        id="base-input"
+                        placeholder="Enter Email"
+                        ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                        formControlName="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+        
+                      <span
+                      class="text-red-600"
+                      *ngIf="
+                      (formSubmitted || contactUsForm.controls['email'].touched) &&
+                      contactUsForm.controls['email'].errors?.['required']"
+                      >Email  is Required *</span
+                    >
+                    <div
+                      class="text-red-600"
+                      *ngIf="
+                        contactUsForm.controls['email'].invalid &&
+                        contactUsForm.controls['email'].touched &&
+                        contactUsForm.get('email')?.hasError('email')
+                      "
+                    >
+                      Please enter a valid email address.
+                    </div>
+                    <div
+                      class="text-red-600"
+                      *ngIf="
+                        contactUsForm.controls['email'].touched &&
+                        contactUsForm.get('email')?.hasError('pattern')
+                      "
+                    >
+                      Please enter a valid email address.
+                    </div>
+                    </div>
+                  </div>
+                  <div class="relative  mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Phone</label
+                      >
+                      <input
+                        type="text"
+                        pattern="^[6-9][0-9]{9}$"
+                        placeholder="Enter  mobile number"
+                        maxlength="10"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        id="base-input"
+                        formControlName="mobile_number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
+                        contactUsForm.controls['mobile_number'].errors?.['required']"
+                        >Phone Number is Required *</span
+                      >
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
+                        contactUsForm.controls['mobile_number'].errors?.['pattern']"
+                      >
+                         Please enter valid number
+                      </span>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="relative   mb-1 sm:mb-5 group">
+                  <div class="mb-5">
+                    <label
+                      for="message"
+                      class="block mb-2 text-sm font-medium text-gray-900 "
+                      >Your message</label
+                    >
+                    <textarea
+                      id="message"
+                      formControlName="Message"
+                      rows="4"
+                      class="block p-2.5 w-full  text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                      placeholder="Leave a comment..."
+                    ></textarea>
+                  </div>
+                </div>
+        
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="text-white bg-[#ff9500] hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  >
+                    Save
+                  </button>
+                </div>
+              </form>
+              </div>
+              </div>
+          <!-- <app-zepcode-contact></app-zepcode-contact> -->
+         </div>
+      </div>
+
+    </div>
   </div>
+
+
+ 
   
   </div>
   <hr class="  mx-10 sm:mx-32 mt-10 sm:mt-20 border-1 border-black">
