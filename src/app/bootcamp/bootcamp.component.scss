@@ -34,11 +34,16 @@
    
    
    
-   .slide img {
-       max-width: 300px;
-       height: 50px;
+   .bootcampimage {
+    
+      //  width: 800px;
+       border:2px solid red;
+      //  background: green
+      //  height: 50px;
    }
-  
+   .bootcampimage img{
+    width: 100%;
+   }
 
    @media screen and (min-width:200px) and (max-width: 1300px)  {
 
@@ -75,4 +80,174 @@
   }
   
 
+
+
+
+
+  // new css
+
+
+  .underline {
+    text-decoration: none; 
+    position: relative; 
+  }   
+
+ .underline:after {
+     position: absolute;
+     content: '';
+     height: 4px;
+     bottom: -20px; 
+
+
+   left: 0;
+     right: 0;
+   width: 15%;
+   background: purple;
+   background: linear-gradient(blue, purple);
+   border-radius: 10px;
+   
+   -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition:.5s;
+ }
+
+
+ .iEgdGs::before {
+  content: "";
+  position: absolute;
+  // z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+ height: 100%;
+  background-color: rgb(82, 15, 183);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  transform: skewX(-25deg) translateX(-70%);
+}
+.iEgdGs::after {
+  content: "";
+  // position: absolute;
+  // z-index: 1;
+  top: 70px;
+  left: 0px;
+  transform: translate(-30%, -20%);
+  width: 350px;
+  height: 350px;
+  border-radius: 200px;
+  background-color: rgba(61, 8, 139, 0.376);
+}
+.dpuhDx {
+  margin-top: 128px;
+  height: fit-content;
+}
+
+
+.iEgdGs {
+  position: relative;
+  overflow: hidden;
+}.iEgdG {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.eeExt {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(82, 15, 183);
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    box-shadow: rgba(82, 15, 183, 0.3) 0px 8px 9px 0px;
+}
+.eeExt::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgb(72, 196, 121);
+  position: absolute;
+  left: -30%;
+  top: 0px;
+  transform: translateZ(-1px);
+}
+.hOFzYc::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 13%;
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+ 
+  // z-index: -1;
+}
+.hOFzYc {
+  position: relative;
+  overflow: visible;
+  box-shadow: rgba(25, 24, 29, 0.282) 16px 22px 70px;
+  border-radius: 15px;
   
+}
+.enroll-button-wrap {
+  background-color: rgb(244, 233, 255);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 240px;
+  margin-right: 20px;
+}
+.enroll-button-wrap .details {
+  display: flex;
+  flex-flow: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 2px 5px;
+}
+
+.amount::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  background: url('/assets/newbootcamp/benefitunderline.svg') 0% 0%  no-repeat;
+}
+.iEgdG::before {
+  content: "";
+  position: absolute;
+ 
+  width: 200vw;
+  height: 100%;
+  background-color: rgb(82, 15, 183);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  transform: skewX(-25deg) translateX(-70%);
+}
+
+@media screen and (min-width:200px) and (max-width:600px) {
+ 
+  .iEgdG::before {
+   
+   
+    width: 120vw;
+  }
+  .Avail{
+    color: #ffb80a;
+  }
+}
+
