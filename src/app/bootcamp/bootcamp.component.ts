@@ -8,6 +8,7 @@ import {
 import { SeriveService } from '../serive.service';
 import Swal from 'sweetalert2'
 import { initFlowbite } from 'flowbite'
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 interface slider {
   img: string;
@@ -35,6 +36,21 @@ interface courseList {
     chapternumber: number;
   }[];
 }
+interface Mentor{
+  id:any;
+  img:string;
+  name: string;
+  company:string;
+  experiennce:string;
+ 
+}interface testimonial{
+  id:any;
+  img:string;
+  name: string;
+  company:string;
+  message:string;
+ 
+}
 interface accordionItem {
   title: string;
   description:string;
@@ -59,17 +75,51 @@ export class BootcampComponent  implements OnInit{
     
   ];
   skills: skill[] = [
-    {name: ' Linux Shell Scripting'},
-    {name: ' DSA'},
-    {name: ' Spring Boot'},
-    {name: ' Operating Systems'},
-    {name: ' Rest API'},
-    {name: ' Git'},
-    {name: ' Networks'},
-    {name: ' Design Patterns'},
-    {name: ' OOPs'},
-    {name: ' SQL'},
-    {name: ' System Design'},
+    {name: ' HTML'},
+    {name: ' CSS'},
+    {name: ' React.js'},
+    {name: ' Node.js'},
+    {name: ' MongoDB'},
+    {name: 'Express.js'},
+    {name: 'Bootstrap'},
+    {name: ' Mastering Git'},
+    {name: ' Javascript Fundamental Concept'},
+    {name: ' Advacnced Javascript Concepts'},
+   
+    {name: ' Advanced System Design'},
+    
+   
+    
+ ];  Mentors: Mentor[] = [
+    { id:1,name: ' Gautam Joshi',img:'/assets/mentors/GautamJoshi.webp', company: 'Sifar',experiennce:'25 Years'},
+     { id:2,name: ' Amit kumar',img:'/assets/mentors/Amitkumar.webp',company: 'Co-Founder and  Director  at Sigma Power Tech Pvt. Ltd.',experiennce:'10 Years'},
+    { id:3,name: 'BINIT KUMAR', img:'/assets/mentors/BINITKUMAR.webp',company: 'Smart Brains',experiennce:'13 Years'},
+    { id:4, name: 'Chandan Pandit ',img:'/assets/mentors/ChandanPandit.webp',company: 'Expedia',experiennce:'11 Years'},
+    {id:5, name: 'Shahkar Ahmed ',img:'/assets/mentors/ShahkarAhmed.webp',company: 'Onetick Technologies',experiennce:'10 Years'},
+    { id:6, name: 'Shankar Dayal ',img:'',company: 'Adobe',experiennce:'20 Years'},
+    {id:7, name: 'Durgesh Pal ',img:'/assets/mentors/DurgeshPal.webp',company: 'Sopra Steria',experiennce:'10 Years'},
+    { id:8, name: 'Lalit Verma ',img:'/assets/mentors/LalitVerma.webp',company: 'Oracle Corporation, USA',experiennce:'25 Years'},
+    { id:9, name: 'Dinesh Sharma ',img:'/assets/mentors/DineshSharma.webp',company: 'Onetick Technologies',experiennce:'11 Years'},
+    { id:10, name: 'Garima Sharma',img:'/assets/mentors/GarimaSharma.webp',company: 'EY',experiennce:'10 Years'},
+    
+    
+ ];  testimonials: testimonial[] = [
+    { id:1,name: ' Kapil Chaudhary',img:'/assets/reviews/kapil.png', company: ' Dexbean Technologies',message:`The fullstack development program at Zepcode was
+    amazing! I learned a lot from real World projects and live
+    classes with experts. It gave me the skills and confidence to
+    start my career in tech. I highly recommend it.`},
+     { id:2,name: '  Vaishali Rana',img:'../../assets/reviews/vaishali.png',company: 'SISL Infotech Pvt. Ltd.',message:`I loved the fullstack development program at Zepcode!
+     Learning by doing real World projects and getting job
+     placement was really helpful.`},
+    { id:3,name: ' Shubham', img:'/assets/reviews/shubham.png',company: 'Website Tool Box India ',message:`Enrolling in Zepcode's fullstack development program was
+    one of the best decisions I've made. The program's
+    practical approach and focus on real-world projects gave
+    me the confidence to apply for web development roles.`},
+    { id:4, name: 'Chanderkant ',img:'/assets/reviews/chndrkant.png',company: 'Onetick Technologies',message:`This program is awesome! The lessons are easy to follow,
+    and the teachers really know their stuff. They're always
+    there to help you out when you need it. Plus, the help they
+    gave me for finding a job is just the cherry on top.`},
+   
     
  ];  
  Outcomes: Outcome[] = [
@@ -95,24 +145,27 @@ export class BootcampComponent  implements OnInit{
  ]; CERTIFICATIONLists: CERTIFICATIONList[] = [
     {name: ' Certification accepted by 300+ companies'},
     {name: ' Show employers your certified skills'},
-    {name: ' Attract recruiters on LinkedIn with your certifications'},
+    {name: ' Attract recruiters on LinkedIn with your certificationsAttract recruiters on JobIQ and other platforms with your certifications'},
     
     
  ];AlumniSupports: AlumniSupport[] = [
     {name: ' 	Life long engagement of Zepcode with the student'},
     {name: ' 	Free exclusive Zepcode’s Alumni Membership valued at 15k'},
-    {name: ` 	1000 of zepcode's alumni network `},
+    {name: ` 	1000’s of zepcode's alumni network `},
     {name: '	Opportunity to stay in touch with zepcode alumni network'},
     
     
  ];
  learningToEarnLists: learningToEarnList[] = [
+    
+    {name: ' 	Yes'},
     {name: ' 	40 hours'},
     {name: ' 6 months'},
     {name: ' 	1  year'},
     {name: ' 	Industry experts (Avg exp. > 5 yrs)'},
     {name: ' 	Industry aligned'},
-    {name: ' 	Active '},
+    {name: ' 	1year '},
+    {name: ' 	Expert level '},
     
     
  ];
@@ -299,10 +352,9 @@ chapter: [
 ];
 
   accordionItems: accordionItem[] = [
-    {title:'How does Zepcode maintain long-term engagement with students?', description:"Zepcode ensures ongoing engagement through regular updates, alumni events, and exclusive membership benefits." },
-    {title:'How does Zepcode support alumni in their career advancement?', description:"At Zepcocde, we help you navigate your career path by offering guidance, assisting with job placements, and connecting you with job opportunities through our industry connections.  " },
-    {title:' How can I access the career guidance and job placement assistance offered by Zepcode?', description:"Zepcode provides career guidance and job placement assistance through dedicated advisors who work with you one-on-one to understand your career goals and assist you in securing relevant job opportunities. " },
-    {title:` Are there any fees associated with accessing SkilloVilla's career services?`, description:"No, Zepcode's career services, including career guidance, job placement assistance, and access to job openings, are provided to alumni at no additional cost. " },
+    {title:'Who should enroll in this program?', description:"Anyone who wants to boost up their Full Stack Development skills with work experience of real applications in developer environment should enroll in this program." },
+    {title:'What types of jobs will this program prepare me for?', description:"This program will make you job ready as Full Stack Developer for tech startups, big product companies, and major tech companies. " },
+    {title:'How is this program different from other full stack development courses?', description:" Regular online courses and expensive bootcamp programs don't give you the practical experience you need for a top tech job. But with Zepcode, you’ll work on real projects, and do hands on projects in a real corporate setting with real developers team. " },
    
   
     
@@ -325,15 +377,42 @@ chapter: [
     infinite: true,
     
   }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
   activeIndex: number | null = null;
   activeIndexCourse: number | null = null;
 
 
   contactUsForm!: FormGroup;
+  contactUsbootcampForm!: FormGroup;
   errorMessage: any;
   formSubmitted: boolean = false;
+  formSubmittedbootcamp: boolean = false;
   SubmitSuccessful: boolean = false;
-
+  disable=false;
 
   constructor(
     private service: SeriveService,
@@ -344,6 +423,24 @@ chapter: [
     initFlowbite();
 
     this.contactUsForm = this.formBuilder.group({
+      firstname: ['', [Validators.required]],
+      lastname: [''],
+      email: ['', [Validators.required, Validators.email]],
+      mobile_number: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[6-9]\d{9}$/),
+          Validators.minLength(10),
+          Validators.maxLength(10),
+        ],
+      ],
+      Message:[''],
+      QueryType:' Zepcode Bootcamp Enquiry',
+
+      enquiryFrom: ['Zepcode Bootcamp'],
+    }); 
+    this.contactUsbootcampForm = this.formBuilder.group({
       firstname: ['', [Validators.required]],
       lastname: [''],
       email: ['', [Validators.required, Validators.email]],
@@ -402,6 +499,40 @@ chapter: [
         }
       },
       (error) => {
+        this.errorMessage = error.error.error;
+        console.log(error.error);
+        if (error.error.code === 'ERR-400') {
+         
+          Swal.fire(this.errorMessage);
+          return;
+        }
+      }
+    );
+  }
+  
+  submitform() {
+    this.formSubmittedbootcamp = true;
+    if (this.contactUsbootcampForm.invalid) {
+      return;
+    }
+    this.disable=true
+    const UserData = { ...this.contactUsbootcampForm.value };
+    this.service.addUserData(UserData).subscribe(
+      (data) => {
+        if (data.code === 'SUC-200') {
+          this.SubmitSuccessful = true;
+          this.disable=true
+
+          this.contactUsbootcampForm.reset();
+          this.formSubmittedbootcamp = false;
+          this.showModal = false;
+
+          Swal.fire("Thankyou for showing your interest in our bootcamp. Our team will connect with you soon!");
+        }
+      },
+      (error) => {
+        this.disable=false
+
         this.errorMessage = error.error.error;
         console.log(error.error);
         if (error.error.code === 'ERR-400') {

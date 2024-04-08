@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
 
+@import url('/src/styles/fonts.css');
 
 *{
-    font-family: "Bellefair", serif;
+    font-family: "metropolis", serif;
 
 }
 .footer li {
@@ -70,7 +71,6 @@
   }
   
   .accordion-content {
-    padding: 10px;
     display: none;
     border: 1px solid #ddd;
   }
@@ -190,7 +190,7 @@
   left: 13%;
   height: 100%;
   width: 100%;
-  background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
+  // background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 12px;
@@ -200,17 +200,10 @@
 .hOFzYc {
   position: relative;
   overflow: visible;
-  box-shadow: rgba(25, 24, 29, 0.282) 16px 22px 70px;
-  border-radius: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  border-radius: 15px;
   
 }
-.enroll-button-wrap {
-  background-color: rgb(244, 233, 255);
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 240px;
-  margin-right: 20px;
-}
+
 .enroll-button-wrap .details {
   display: flex;
   flex-flow: row;
@@ -227,6 +220,8 @@
   height: 15px;
   background: url('/assets/newbootcamp/benefitunderline.svg') 0% 0%  no-repeat;
 }
+@media screen and (min-width:600px)  {
+
 .iEgdG::before {
   content: "";
   position: absolute;
@@ -237,6 +232,7 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 10px;
   transform: skewX(-25deg) translateX(-70%);
+}
 }
 
 @media screen and (min-width:200px) and (max-width:600px) {
@@ -251,3 +247,13 @@
   }
 }
 
+::ng-deep  .swal2-styled.swal2-confirm{
+  background-color: #f67139 !important;
+}
+::ng-deep .swal2-popup .swal2-title {
+
+  font-size: 14px !important;
+
+  margin: 16px 0 0.4em !important;
+
+}
