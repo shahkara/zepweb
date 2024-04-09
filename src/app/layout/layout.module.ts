@@ -7,6 +7,7 @@ import { BootcampComponent } from '../bootcamp/bootcamp.component';
 import { ZepcodeContactComponent } from '../zepcode-contact/zepcode-contact.component';
 import { BootcampContactComponent } from '../bootcamp-contact/bootcamp-contact.component';
 import {  ReactiveFormsModule }   from '@angular/forms';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import {  ReactiveFormsModule }   from '@angular/forms';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule,
+    
     
   ]
 })
