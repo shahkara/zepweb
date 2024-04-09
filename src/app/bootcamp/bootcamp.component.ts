@@ -90,20 +90,22 @@ export class BootcampComponent  implements OnInit{
     
    
     
- ];  Mentors: Mentor[] = [
+ ]; 
+  Mentors: Mentor[] = [
     { id:1,name: ' Gautam Joshi',img:'/assets/mentors/GautamJoshi.webp', company: 'Sifar',experiennce:'25 Years'},
      { id:2,name: ' Amit kumar',img:'/assets/mentors/Amitkumar.webp',company: 'Co-Founder and  Director  at Sigma Power Tech Pvt. Ltd.',experiennce:'10 Years'},
     { id:3,name: 'BINIT KUMAR', img:'/assets/mentors/BINITKUMAR.webp',company: 'Smart Brains',experiennce:'13 Years'},
     { id:4, name: 'Chandan Pandit ',img:'/assets/mentors/ChandanPandit.webp',company: 'Expedia',experiennce:'11 Years'},
     {id:5, name: 'Shahkar Ahmed ',img:'/assets/mentors/ShahkarAhmed.webp',company: 'Onetick Technologies',experiennce:'10 Years'},
     { id:6, name: 'Shankar Dayal ',img:'',company: 'Adobe',experiennce:'20 Years'},
-    {id:7, name: 'Durgesh Pal ',img:'/assets/mentors/DurgeshPal.webp',company: 'Sopra Steria',experiennce:'10 Years'},
+    {id:7, name: 'Amod Sharma ',img:'/assets/mentors/amodsharma.png',company: 'Onetick Technologies',experiennce:'15+ Years'},
     { id:8, name: 'Lalit Verma ',img:'/assets/mentors/LalitVerma.webp',company: 'Oracle Corporation, USA',experiennce:'25 Years'},
     { id:9, name: 'Dinesh Sharma ',img:'/assets/mentors/DineshSharma.webp',company: 'Onetick Technologies',experiennce:'11 Years'},
     { id:10, name: 'Garima Sharma',img:'/assets/mentors/GarimaSharma.webp',company: 'EY',experiennce:'10 Years'},
     
     
- ];  testimonials: testimonial[] = [
+ ]; 
+  testimonials: testimonial[] = [
     { id:1,name: ' Kapil Chaudhary',img:'/assets/reviews/kapil.png', company: ' Dexbean Technologies',message:`The fullstack development program at Zepcode was
     amazing! I learned a lot from real World projects and live
     classes with experts. It gave me the skills and confidence to
@@ -123,7 +125,7 @@ export class BootcampComponent  implements OnInit{
     
  ];  
  Outcomes: Outcome[] = [
-    {name: ' 	Learn how to use Linux commands and scripts to automate tasks.'},
+    // {name: ' 	Learn how to use Linux commands and scripts to automate tasks.'},
     {name: ' 	Master Git for managing code and collaborating on team projects.'},
     {name: ' 	Excel in coding interviews by solving complex problems using Data Structures and Algorithms.'},
     {name: ' 	Understand SQL for managing databases and designing schemas effectively.'},
@@ -142,13 +144,15 @@ export class BootcampComponent  implements OnInit{
     {name: ' Get your questions answered by interacting with mentors'},
     
     
- ]; CERTIFICATIONLists: CERTIFICATIONList[] = [
+ ];
+  CERTIFICATIONLists: CERTIFICATIONList[] = [
     {name: ' Certification accepted by 300+ companies'},
     {name: ' Show employers your certified skills'},
     {name: ' Attract recruiters on LinkedIn with your certificationsAttract recruiters on JobIQ and other platforms with your certifications'},
     
     
- ];AlumniSupports: AlumniSupport[] = [
+ ];
+ AlumniSupports: AlumniSupport[] = [
     {name: ' 	Life long engagement of Zepcode with the student'},
     {name: ' 	Free exclusive Zepcode’s Alumni Membership valued at 15k'},
     {name: ` 	1000’s of zepcode's alumni network `},
