@@ -472,15 +472,7 @@ chapter: [
   }
 
 
-  openModal() {
-    this.showModal = true;
-
-  }
-
-  closeModal() {
-    this.showModal = false;
-
-  }
+ 
 
 
   submit() {
@@ -496,6 +488,7 @@ chapter: [
           this.contactUsForm.reset();
           this.formSubmitted = false;
           this.showModal = false;
+          Swal.fire("Submitted successfully");
 
           setTimeout(() => {
             this.SubmitSuccessful = false;
