@@ -1,578 +1,2050 @@
 
-<div
-*ngIf="SubmitSuccessful"
-id="toast-success"
-class="z-10 fixed top-5 right-5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-orange-300 rounded-lg shadow"
-role="alert"
->
-<div
-  class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg"
->
-  <svg
-    class="w-5 h-5"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-  >
-    <path
-      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-    />
-  </svg>
-  <span class="sr-only">Check icon</span>
-</div>
-<div class="ms-3 text-sm text-white font-normal">
-  Submitted successfully.
-</div>
-<button
-  type="button"
-  (click)="closeToast()"
-  class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 "
-  data-dismiss-target="#toast-success"
-  aria-label="Close"
->
-  <span class="sr-only">Close</span>
-  <svg
-    class="w-3 h-3"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 14 14"
-  >
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-    />
-  </svg>
-</button>
-</div>
 
-<section class="bg-[#f9fafc]  sticky top-0  z-40" >
-  
-  
-    <div class="bg-transparent flex justify-between px-4 py-5 sm:px-8  ">
-      <div routerLink="/">
-        <img src="/assets/logo/logo.png" class="w-32 logo sm:w-60 cursor-pointer" alt="">
-    
-      </div>
-      <div>
-    
-        <button (click)="openModal()" class="shadow-md p-2 sm:p-2 text-white border-2 rounded-md bg-[#ff6600] hover:bg-[orange] "> 
-          Get started a Project
+<section class="bg-[#f9fafc] sticky top-0 z-40">
+  <div class="bg-transparent flex justify-between px-4 py-5 sm:px-8">
+    <div routerLink="/">
+      <img
+        src="/assets/logo/logo.png"
+        class="w-32 logo sm:w-60 cursor-pointer"
+        alt=""
+      />
+    </div>
+    <div>
+      <button
+      data-modal-target="static-modal" data-modal-toggle="static-modal"
+        class="shadow-md p-2 sm:p-2 text-white border-2 rounded-md bg-[#ff6600] hover:bg-[orange]"
+      >
+        Get started a Project
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#ede7f4]">
+  <div class="grid grid-cols-1 gap-4 lg:pt-20  sm:grid-cols-2 lg:mx-36  md:mx-16 pt-5 md:pt-10  mx-2  px-3">
+    <div >
+      <h1 class="lg:text-5xl md:text-3xl text-4xl font-semibold mb-10 underline">
+        Full stack Bootcamp Program
+      </h1>
+      <p class="mb-10 ">
+        Kick start your journey in software development with our Fullstack Bootcamp Program. Learn everything from the basics of programming to creating powerful backend applications and dynamic frontend interfaces. This bootcamp will equip you with the skills you need to succeed as a Full Stack Developer.      </p>
+      <span class="bg-white text-purple-800 p-2 font-semibold rounded-md"
+        >No prior coding experience required 🤞</span
+      >
+      <div class="mt-10 flex">
+        <!-- <button
+          type="button"
+          class="py-3 px-3 md:px-3 sm:px-16 mr-4 mb-2 font-medium text-purple-700 focus:outline-none rounded-lg border border-purple-700 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+        >
+          Enroll Now
+        </button> -->
+        <button
+        data-modal-target="static-modal" data-modal-toggle="static-modal"
+          type="button"
+          class="focus:outline-none flex font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg sm:px-16 md:px-5  px-3 py-3 mb-2"
+        >
+        <img
+        src="/assets/newbootcamp/lightning.svg"
+          class="mr-2 "
+        />
+          Contact Us
         </button>
       </div>
-
-      </div>
-      </section>
-
-
-      <section class="bg-no-repeat bg-center bg-cover" style="background-image:url(../../assets/bootcampPage/banner.webp)">
-        <div class="grid grid-cols-1 sm:grid-cols-2 sm:px-32 px-2 md:px-10 xl:px-32 xl:pb-16 ">
-<div class="sm:p-20 p-2 px-5 md:p-4">
-
-
-<h1 class="lg:text-6xl text-5xl text-[#ffffff] lg:leading-snug   py-10 mainHeading">Full Stack  Development Bootcamp Program</h1>
-<p class="text-[#ffffff]  lg:text-3xl">
-  Learn everything from building website interfaces to managing databases in our Full Stack Development Bootcamp Program. Master the skills needed to create complete web applications
-</p>
-<!-- <button (click)="openModal()" class= " mt-10 shadow-md px-10 text-2xl  py-2 text-[#ff7920]  hover:text-white rounded-md bg-[#ffffff] hover:bg-[orange] "> 
-  Contact Us
-  </button> -->
-  <!-- <button  class="text-white  absolute end-2.5 bottom-2.5 bg-[#06052e] hover:bg-[#0c0b4b]  font-medium rounded-lg text-sm px-4 py-3 " (click)="openModal()">Contact Us</button> -->
-
-</div>
-
-<div class="text-center  py-1 sm:py-20  sm:px-24 px-2 lg:px-16 md:p-2">
-    
-<a  class="block py-10  px-6 my-10 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
-
-    <h5 class="mb-2 text-3xl  tracking-tight text-[#000000] ">Program Duration: 6 months</h5>
-    <p class="font-normal text-3xl text-[#7A7A7A] ">600 hours</p>
-    </a>
-
-    <a  class="block py-10 md:mb-10 mb-10 sm:mb-0 px-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-
-        <h5 class="mb-2 text-3xl  tracking-tight text-[#000000] ">Learning Format</h5>
-        <p class="font-normal text-3xl text-[#7A7A7A]">Corporate Experience Classes</p>
-        </a>
-            
-</div>
-        </div>
-
-      </section>
-      <section>
-        <div class=" bg-[#181b3e] "  >
-
-            <ngx-slick-carousel class=" carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                <div *ngFor="let items of this.slides">
-                  <div ngxSlickItem class="slide mx-10 py-10 flex flex-row justify-center align-middle">
-                    <img [src]="items.img" alt="company_img" />
-                  </div>
-                </div>
-              </ngx-slick-carousel>
-           
-                
-        </div>
-      </section>
-      <section class="sm:pt-20 md:pt-10 bg-[#f9fafc]">
-        <div class=" grid sm:grid-cols-1 md:grid-cols-2 sm:px-32 p-4 md:p-4 xl:px-32 sm:gap-10">
-            <div class="sm:px-20 px-1 md:px-6 xl:px-16" >
-                <div class="  border-t-1 rounded-t-full">
-
-                    <img src="/assets/bootcampPage/about.webp" class="  rounded-t-full" alt="">
-                </div>
-            </div>
-            <div>
-                <h1 class="text-4xl md:py-4 md:text-4xl text-[#06052e] lg:text-5xl sm:py-10 pt-5  xl:pt-10">About Our Bootcamp</h1>
-                <p class="text-2xl md:text-sm text-[#777879] lg:text-xl xl:text-2xl py-5">
-                  Join our MERN Stack Bootcamp and explore modern web development. Learn MongoDB for data storage, Express.js for web servers, React for interfaces, and Node.js for server-side coding. Hands-on projects and expert guidance prepare you for success in tech.                <div >
-                    <div class="grid sm:grid-cols-2 md:py-5 text-center sm:text-left">
-
-                        <a href="#" class="block max-w-sm md:p-2 my-6 lg:p-6  sm:my-0 sm:border-dashed sm:border-b-2  border-gray-400   hover:bg-gray-100 ">
-
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">30 +</h5>
-                            <p class="font-normal text-gray-700 dark:text-gray-400">Case Studies & Projects
-                            </p>
-                            </a>
-
-                            <a href="#" class="block max-w-sm md:p-2 my-6 lg:p-6 md:pl-4 sm:my-0  sm:border-dashed sm:border-l-2 border-gray-400  hover:bg-gray-100 ">
-
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">20 +</h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400">Languages & Tools</p>
-                                </a>
-
-                                <a href="#" class="block max-w-sm md:p-2 my-6 lg:p-6 sm:my-0  sm:border-dashed sm:border-r-2 border-gray-400  hover:bg-gray-100 ">
-
-                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">70 +</h5>
-                                    <p class="font-normal text-gray-700 dark:text-gray-400">Live Sessions</p>
-                                    </a>
-
-                                    <a href="#" class="block max-w-sm md:p-2 my-6 sm:my-0 lg:p-6 md:pl-4  sm:border-dashed sm:border-t-2 border-gray-400  hover:bg-gray-100 ">
-
-                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">600 +</h5>
-                                        <p class="font-normal text-gray-700 dark:text-gray-400">Hours Of Training</p>
-                                        </a>
-                                                                                                                                        
-                    </div>
-
-                </div>
-            </div>
-        </div>
-      </section>
-      <section class=" bg-[#f9fafc] sm:pt-10 px-3">
-        <div class="text-center ">
-            <h1 class="sm:text-5xl text-[#06052e] py-6 text-4xl">How is our Service</h1>
-            <p class="text-xl text-[#777879] ">
-              We teach you everything you need to know to become a successful developer with our MERN Stack Bootcamp            </p>
-        </div>
-        <div class="grid grid-cols-1 service  sm:grid-cols-2  xl:grid-cols-4 lg:px-28  md:px-10 xl:px-32  px-6 gap-6 py-14">
-            
-
-            <div class="max-w-sm p-6 text-center sm:text-left  xl:py-1 bg-white rounded-xl shadow-xl transition ease-in-out cursor-pointer hover:-translate-y-1 hover:scale-100 ">
-
-<div class="flex justify-center sm:justify-start">
-  <img src="/assets/bootcampPage/serviceIcon1.png" class="-ml-8" alt="">
-
-</div>    <a >
-        <h5 class="mb-2 text-2xl  tracking-tight text-gray-900 ">Learning</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-500 ">Learn required languages, framework & tools</p>
-  
-</div>
-
-
-<div class="max-w-sm p-6 text-center sm:text-left xl:py-1 bg-white rounded-xl shadow-xl transition ease-in-out cursor-pointer hover:-translate-y-1 hover:scale-100 ">
-  <div class="flex justify-center sm:justify-start">
-    <img src="/assets/bootcampPage/serviceIcon2.png" class="-ml-8" alt="">
-</div>
-    <a>
-        <h5 class="mb-2 text-2xl  tracking-tight text-gray-900 ">Projects</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-500 ">Complete awesome real world projects</p>
-    
-</div>
-
-
-
-<div class="max-w-sm p-6 text-center sm:text-left xl:py-1 bg-white rounded-xl shadow-xl transition ease-in-out cursor-pointer hover:-translate-y-1 hover:scale-100 ">
-  <div class="flex justify-center sm:justify-start">
-
-    <img src="/assets/bootcampPage/serviceIcon3.png" class="-ml-8" alt="">
-</div>
-    <a >
-        <h5 class="mb-2 text-2xl  tracking-tight text-gray-900 ">Development</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-500 ">Experience the complete development lifecycle</p>
+    </div>
+    <div class="  flex   justify-center items-center  ">
    
-</div>
+      <img
+        src="/assets/newbootcamp/herosection.png"
+        class=" bg-green rounded-lg"
+        alt="bootcamp"
+      />
+    </div>
+  </div>
 
-
-
-<div class="max-w-sm p-6 text-center sm:text-left xl:py-1 bg-white rounded-xl shadow-xl transition ease-in-out cursor-pointer hover:-translate-y-1 hover:scale-100 ">
-  <div class="flex justify-center sm:justify-start">
-
-    <img src="/assets/bootcampPage/serviceIcon4.png" class="-ml-8" alt="">
-</div>
-    <a >
-        <h5 class="mb-2 text-2xl tracking-tight text-gray-900 ">Certification</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-500">Be a certified Full Stack Developer</p>
-    
-</div>
-
-
-        </div>
-      </section>
-
-<section class="bg-[#181b3e] text-white p-4 ">
-   <div class="text-center py-10">
-    <h1 class="lg:text-6xl text-4xl pb-4 lg:px-32">Learn MongoDB, Express.js, React, and Node.js in our structured bootcamp program</h1>
-    <p>
-      Discover MERN Stack in our hands-on Bootcamp    </p>
-   </div>
-
-    <div class=" grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:px-32 p-4 md:p-4  sm:gap-10">
-
-        <div  class="bg-white rounded-lg p-10 mb-5">
-            <h1 class="text-[#000000] text-3xl mb-3">
-                Phase 1: Corporate (In-Company) Training (6 Months)
-            </h1>
-            <p class="text-[#777879] pb-5">
-              For the initial six months, immerse yourself in intensive on-site training at our cutting-edge corporate campus, mirroring real job scenarios. Work on live projects, collaborate with industry professionals, and develop sought-after skills required by leading employers            </p>
-
-            <p class="text-[#777879]"><b>Work Environment:</b>
-              Get a taste of real work life in our simulated 9-5 job setup during the first six months. Learn project planning, execution, and more firsthand, just like on the job              </p>
-        </div>
-
-        <div  class="bg-white rounded-lg p-10 mb-5">
-            <h1 class="text-[#000000] text-3xl mb-3">
-                Phase 2: Interview Preparations (6 Months)
-            </h1>
-            <p class="text-[#777879] pb-5">
-               <b> Mock Interviews :</b> 
-               In the following six months, improve your interview skills with personalized training and mock interviews. Get feedback to excel in both technical and behavioral interviews                    </p>
-
-            <p class="text-[#777879]">
-               <b> Placement Assistance:</b> 
-               Take advantage of our wide network of partner companies and dedicated job placement assistance. We'll link you with exciting career prospects that match your skills and goals                             </p>
-        </div>
-</div>
-
+  <div class="relative  sm:top-10 top-7 flex justify-center z-10">
+    <span class="text-center sm:py-2 sm:px-8 px-2 shadow-xl bg-white rounded-full">
+      🔥 <b class="text-purple-800 font-semibold sm:text-xl">2000+</b> Jobs</span
+    >
+  </div>
+  <div
+    class=" sm:mx-36 mx-10 flex sm:py-5  p-2 rounded-lg justify-center sm:gap-5 relative bg-white sm:top-5 top-4 shadow-xl"
+  >
+    <div
+      *ngFor="let item of this.slides"
+      class="grid content-center p-2  transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+    >
+      <img src="{{ item.img }}" class="sm:w-28 w-48 " alt="" />
+    </div>
+  </div>
 </section>
-
-
-      <section class="sm:pt-20 md:pt-10 bg-[#f9fafc]">
-        <div class=" grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:px-32 p-4 md:p-4 xl:px-32 sm:gap-10">
-           
-            <div class="pt-10">
-                <span class="text-4xl  md:text-4xl text-[#ffffff] rounded-xl bg-[#181b3e]  p-2 ">Our Aim</span>
-                <div class="py-10">
-
-               
-               <h1 class="text-2xl md:text-3xl lg:text-2xl">
-                Mission Statement 
-               </h1>
-                    
-                    <p class="text-xl md:text-2xl text-[#777879] lg:text-xl  py-5">
-                      Our goal is clear : to arm you with the skills and confidence needed to thrive as a professional in the fast-paced tech industry. We're dedicated to providing top-notch training that goes beyond conventional education, preparing you to succeed in today's competitive job market
-                        <h1 class="text-2xl md:text-3xl lg:text-2xl">
-                            Focus on Excellence
-                       </h1>
-                       <p class="text-xl md:text-2xl  lg:text-xl text-[#777879]  py-5">
-                        We are committed to delivering excellence in every aspect, whether it's crafting the curriculum or offering personalized mentorship. Our goal is to provide you with the finest training experience available, ensuring your success every step of the way.                    </div>
-            </div>
-            <div class="sm:px-20 px-1 md:px-6 xl:px-16" >
-                <div class="md:flex justify-center border-t-1 rounded-t-full">
-
-                    <img src="/assets/bootcampPage/aim.webp" class=" border-t-1 rounded-t-full" alt="">
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <section class="sm:pt-20 md:pt-10 bg-[#f9fafc]">
-        <div class=" grid sm:grid-cols-1 lg:grid-cols-2 sm:px-32 p-4 md:p-4 xl:px-32 sm:gap-10">
-            <div>
-
-           
-            <h1 class="sm:text-6xl text-3xl  text-[#06052e] leading-snug">
-                Corporate Training Experience
-            </h1>
-            <p class="text-[#777879] my-5 text-xl md:text-2xl xl:text-3xl xl:leading-snug lg:text-xl sm:pr-28">
-              We aim for the best in everything we do, from designing courses to providing one-on-one guidance, ensuring you get top-notch training.                
-            </p>
-           <div class="md:px-14 lg:px-0 mb-10 ">
-            <img src="/assets/bootcampPage/rectangle1.webp" class="my-10 rounded-lg " alt="">
-            <img src="/assets/bootcampPage/rectangle.webp" class="rounded-lg" alt="">
-           </div>
-        </div>
-        <div class="md:px-14 lg:px-0 ">
-            <img src="/assets/bootcampPage/firstImage.webp"  class=" rounded-lg mb-10 sm:h-[60vh] lg:h-[30vh] xl:h-[70vh] w-[100vw] "alt="">
-            <img src="/assets/bootcampPage/secondImage.webp"  class=" rounded-lg sm:h-[62vh] lg:h-[30vh] xl:h-[65vh] w-[100vw]">
-        </div>
-
-</div>
-
-</section>
-
-<section class="sm:pt-20 md:pt-10 bg-[#f9fafc]">
-    <h1 class="text-center text-4xl sm:text-6xl">
-        Frequently asked questions
+<section class="grid bg-[#f9f9f9] lg:px-36 md:px-16 px-4 lg:pt-28 pt-10">
+  <div>
+    <h2 class="text-[#ffba00] sm:text-xl text-sm  font-semibold">PROGRAM OVERVIEW</h2>
+    <h1 class="font-bold sm:text-2xl text-xl my-3 sm:my-5">
+      Dive into a whole new learning adventure
     </h1>
-    <div class="sm:pt-20 md:pt-10 grid sm:px-32 p-4 md:p-4 xl:px-32 sm:gap-10">
-        <div class="accordion">
-            <div *ngFor="let item of accordionItems; let i = index" class="mb-5 rounded-lg border border-orange-300">
-              <div class="accordion-header rounded-lg border-t" [class.active]="activeIndex === i" (click)="toggleAccordion(i)">
-                {{ item.title }}
-              </div>
-              <div class="accordion-content border-t-0 rounded-lg" [class.active]="activeIndex === i">
-                {{ item.description }}
-              </div>
-            </div>
+    <p>
+      Jump into live classes, tackle real-world case studies. Become the sought-after talent every recruiter dreams of.
+    </p>
+  </div>
+
+  <div class="relative rounded-lg bg-white shadow-lg mt-10">
+    <h1 class="font-semibold text-xl pl-10 pt-3">Skills covered</h1>
+    <div class="grid grid-cols-1 md:grid-cols-4 p-4">
+      <div class="col-span-3">
+        <div class="grid sm:grid-cols-4 grid-cols-2 sm:px-8 pt-4">
+          <div *ngFor="let item of skills" class="my-2">
+            <h1 class="flex text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-chevron-right mr-3 text-green-500 pt-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+
+              {{ item.name }}
+            </h1>
           </div>
-<!-- <div id="accordion-collapse" data-accordion="collapse">
-    <h2 id="accordion-collapse-heading-1" [class.active]="activeIndex === i" (click)="toggleAccordion(i)" >
-      <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border  border-orange-500 rounded-2xl  hover:bg-gray-100  gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-        <span>What  is the duration of the bootcamp?</span>
-        <svg data-accordion-icon class="w-10 h-10 rounded-full p-4 bg-orange-200 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center p-10 sm:p-0 ">
+        <img src="/assets/newbootcamp/skillscovered.avif" class="sm:w-40" alt="" />
+      </div>
+    </div>
+    <div class="absolute h-10 w-10 -left-4 top-2 bg-purple-800 rounded-full p-3">
+      <img
+        src="/assets/newbootcamp/diamond.png"
+        class="bg-transparent"
+    
+      />
+    </div>
+  </div>
+
+  <div class="relative rounded-lg bg-white shadow-lg mt-10">
+    <h1 class="font-semibold text-xl pl-10 pt-3">Outcomes</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-4 p-4">
+      <div class="col-span-3">
+        <div class="grid sm:px-8 pt-4">
+          <div *ngFor="let item of Outcomes" class="my-2">
+            <h1 class="flex text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-chevron-right mr-3 text-green-500 sm:pt-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+
+              {{ item.name }}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center  p-10 sm:p-0">
+        <img src="/assets/newbootcamp/outcome.avif" class="sm:w-40"  />
+      </div>
+    </div>
+    <div
+      class="absolute h-10 w-10 -left-4 top-2 bg-purple-800 rounded-full p-3 "
+    >
+      <img src="/assets/newbootcamp/flag.png" class="bg-transparent"  />
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 mt-5 gap-5">
+    <div class="relative rounded-r-lg bg-white shadow-lg mt-5 pb-12">
+      <h1 class="font-semibold text-2xl pl-10 pt-3">Learning effort</h1>
+
+      <h1 class="flex pl-10 p-4 mt-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="currentColor"
+          class="bi bi-chevron-right mt-3 text-green-500 pt-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+          />
         </svg>
-      </button>
-    </h2>
-    <div id="accordion-collapse-body-1"  class="hidden" aria-labelledby="accordion-collapse-heading-1">
-      <div class="p-5 border  border-orange-500 border-t-0 rounded-2xl dark:border-gray-700 dark:bg-gray-900">
-        <p class="mb-2 text-gray-500 dark:text-gray-400"> Full Stack  Web Development Bootcamps typically range from 600 hours. </p>
+
+        <span
+          class="rounded-full pl-4 pr-20 py-4"
+          style="
+            background-image: linear-gradient(
+              to left,
+              rgb(214, 211, 211),
+              white
+            );
+          "
+        >
+          6 months program</span
+        >
+      </h1>
+
+      <h2 class="pl-10 my-3 ">
+        <span class="font-semibold text-4xl ">40</span>hrs/weekwork 👩‍💻
+      </h2>
+      <h1
+        class="text-center text-purple-800 font-semibold bg-[#e9e1f6] p-4 rounded-b-lg absolute bottom-0 w-full"
+      >
+        No prior coding experience required
+      </h1>
+
+      <div
+        class="absolute h-10 w-10 -left-4 top-2 bg-purple-800 rounded-full p-3"
+      >
+        <img
+          src="/assets/newbootcamp/growth.png"
+          class="bg-transparent"
+          alt=""
+        />
       </div>
     </div>
-    <h2 id="accordion-collapse-heading-2" class="mt-10">
-      <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border  border-orange-500 rounded-2xl  hover:bg-gray-100  gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-        <span>What kind of Projects will i work on during the Bootcamp ?</span>
-        <svg data-accordion-icon class="w-10 h-10 rounded-full p-4 bg-orange-200 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-          </svg>
-      </button>
-    </h2>
-    <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-        <div class="p-5 border  border-orange-500 border-t-0 rounded-2xl dark:border-gray-700 dark:bg-gray-900">
-            <p class="mb-2 text-gray-500 dark:text-gray-400"> Bootcamps often includes hands-on projects that mimic real-world web development scenarios, which you can showcase in your portfolio. </p>
-      </div>
+    <div class="w-full   " >
+      <img src="/assets/newbootcamp/videoreplace.png"  class="w-full" >
+     
     </div>
-    <h2 id="accordion-collapse-heading-3" class="mt-10" >
-      <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border  border-orange-500 rounded-2xl  hover:bg-gray-100  gap-3" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
-        <span> Who  is this course for?</span>
-        <svg data-accordion-icon class="w-10 h-10 rounded-full p-4 bg-orange-200 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-          </svg>
-      </button>
-    </h2>
-    <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-        <div class="p-5 border  border-orange-500 border-t-0 rounded-2xl dark:border-gray-700 dark:bg-gray-900">
-            <p class="mb-2 text-gray-500 dark:text-gray-400">This course is suitable for beginners  with no prior coding experience and for those with some coding knowledge who want to become proficient in full stack development. </p>
-      
-      </div>
-    </div>
-  </div> -->
-  
-    </div>
+    <div></div>
+  </div>
 </section>
 
-<section class="sm:pt-20 md:pt-10 bg-[#f9fafc]">
-    
-    <div class="   text-white  grid  rounded-3xl  mx-3 xl:px-32 sm:mx-32  md:mx-4 " >
-        <img src="/assets/bootcampPage/contactBackground.png" class="rounded-3xl contactImage"  alt="">
-        <div class="absolute sm:py-20 sm:px-24 md:px-10  xl:px-24 py-4 sm:w-[82vw] md:w-[100vw] xl:w-[85vw]" >
 
-       
-        <h1 class="sm:text-5xl lg:text-5xl  md:text-4xl text-3xl pb-6 px-2 contacttext text-center">
-          Join our bootcamp! Click the button below to sign up
-        </h1>
-        <p class="text-center pb-10 px-4 md:text-xl"> Start your journey by filling out this simple form below </p>
-     <div class="flex justify-center px-4">
-        <div class="w-full max-w-md ">   
-            <div class="relative mb-3">
-                <div class="absolute inset-y-0 rtl:inset-x-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                   
-                </div>
-                <input type="email" id="default-email" class="block input  w-full p-4 ps-2 sm:ps-10 text-2xl border border-gray-300 rounded-lg bg-white " readonly vlaue=" Contact here👉👉" placeholder="Contact here👉👉" required />
-                <button  class="text-white  absolute end-2.5 bottom-2.5 bg-[#06052e] hover:bg-[#0c0b4b]  font-medium rounded-lg text-sm px-4 py-3 " (click)="openModal()">Contact Us</button>
-                
-            </div>
-            
+<section class="grid bg-[#f9f9f9] p-4 lg:px-36 md:px-16 lg:pt-28">
+  <div>
+    <h1 class="text-[#ffbe10] font-semibold my-3 sm:my-5">CAREER GROWTH</h1>
+    <h1 class="sm:text-3xl text-2xl my-3 sm:my-5 font-bold">Industry Insights</h1>
+    <p>
+      Supercharge Your Growth in Software Development with our Bootcamp Corporate Program    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 mt-10">
+    <div class="grid  grid-cols-1   sm:grid-cols-2">
+      <div class="sm:border-r border-gray-200 sm:px-2">
+        
+        <div class="p-2  pt-6 sm:border-b mb-3 sm:mb-0 sm:shadow-none shadow-lg rounded-lg sm:p-6">
+          <div class="h-10 w-10 mb-5 bg-[#7c3fd7] rounded-lg p-3">
+            <img
+              src="/assets/newbootcamp/greengradientstar.png"
+              class="bg-transparent"
+              alt=""
+            />
           </div>
-          <div class="fixed z-50  overflow-y-auto    top-0 w-full left-0   " tabindex="-1" *ngIf="showModal">
+          <a>
+            <h5
+              class="mb-2 text-xl font-bold tracking-tight text-gray-900"
+            >
+            Plan your Career path
+            </h5>
+          </a>
+          <p class="mb-3 text-gray-500">
+            Get ready for the job you want
             
-            <div >
-              <div
-              class="     h-[100vh]  bg-gray-500 bg-opacity-75 text-right "
+          </p>
+          <br>
+        </div>
+        <div class=" p-2  pt-6 sm:p-6 mb-3 sm:mb-0 sm:shadow-none shadow-lg rounded-lg">
+          <div class="h-10 w-10 mb-5 bg-[#51d686] rounded-lg p-3">
+            <img
+              src="/assets/newbootcamp/dumbbell.png"
+              class="bg-transparent"
+              alt=""
+            />
+          </div>
+          <a>
+            <h5
+              class="mb-2 text-xl font-bold tracking-tight text-gray-900"
+            >
+            Gain useful skills
+            </h5>
+          </a>
+          <p class="mb-3  text-gray-500">
+            Solve real-world case studies from the industry.
+          </p>
+        </div>
+      </div>
+      <div class="sm:px-2">
+        <div class=" p-2 pt-6 mb-3 sm:mb-0 sm:shadow-none shadow-lg rounded-lg sm:p-6 sm:border-b border-gray-200">
+          <div class="h-10 w-10 mb-5 bg-[#51d686] rounded-lg p-3">
+            <img
+              src="/assets/newbootcamp/greengradientarrow.png"
+              class="bg-transparent"
+              alt=""
+            />
+          </div>
+          <a>
+            <h5
+              class="mb-2 text-xl font-bold tracking-tight text-gray-900"
+            >
+            Real Projects
+            </h5>
+          </a>
+          <p class="mb-3  text-gray-500">
+            Learn useful skills by doing real projects.
+          </p>
+        </div>
+        <div class=" sm:p-6 p-2 pt-6  mb-3 sm:mb-0 sm:shadow-none shadow-lg rounded-lg border-gray-200">
+          <div class="h-10 w-10 mb-5 bg-[#7c3fd7] rounded-lg p-3">
+            <img
+              src="/assets/newbootcamp/wrench.png"
+              class="bg-transparent"
+              alt=""
+            />
+          </div>
+          <a>
+            <h5
+              class="mb-2 text-xl font-bold tracking-tight text-gray-900"
+            >
+            Designed by Professionals
+            </h5>
+          </a>
+          <p class="mb-3  text-gray-500">
+            Expertly crafted curriculum adjusted to match industry trends.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center">
+      <div class="w-3/4">
+        <img src="/assets/newbootcamp/IndustryInsights.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class=" px-4 bg-[#f9f9f9] lg:px-36 md:px-16  pt-10">
+  
+    <div class="lg:px-32 " >
+
+  <div class="grid grid-cols-1 sm:grid-cols-3  lg:border-2 rounded-lg p-2">
+    <div class="flex p-4 sm:border-r justify-center lg:shadow-none shadow-lg rounded-lg">
+        
+      <img class="w-8 h-8" src="/assets/newbootcamp/bag.jpeg" >
+  
+  <div class=" ms-4">
+      <p class="text-2xl font-bold text-[#7a3bda]">100k+
+      </p>
+      <p class="text-sm font-semibold">Jobs
+      </p>
+  </div>
+  
+</div>
+<div class="flex p-4 sm:border-r justify-center lg:shadow-none shadow-lg rounded-lg">
+  
+<img class="w-8 h-8" src="/assets/newbootcamp/salary.png" >
+
+<div class=" ms-4">
+<p class="text-2xl font-bold text-[#7a3bda]">8 LPA
+</p>
+<p class="text-sm font-semibold">Avg Salary
+</p>
+</div>
+
+</div>
+<div class="flex p-4 justify-center lg:shadow-none shadow-lg rounded-lg " >
+  
+<img class="w-8 h-8"  src="/assets/newbootcamp/hike.png" >
+
+<div class=" ms-4">
+<p class="text-2xl font-bold text-[#7a3bda]  ">
+  30%
+</p>
+<p class="text-sm font-semibold  ">
+  YoY Hike
+</p>
+</div>
+
+</div>
+
+  </div>
+    
+  </div>
+
+</section>
+
+
+<section class="grid bg-[#f9f9f9] lg:px-36 md:px-16 lg:py-28 p-4">
+  <div>
+    <h1 class="text-[#ffbe10] font-semibold my-5">LEARNING JOURNEY</h1>
+    <h1 class= " text-2xl sm:text-3xl my-3 sm:my-5 font-semibold">Learning experience at Zepcode</h1>
+    <p>
+      Learn all important skills from the industry experts in corporate ambience. Then, apply what you've learned to the real projects to strengthen your resume. Practice mock interviews to prepare for your ideal job.    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 mt-10">
+    <div class="flex justify-center sm:justify-start">
+      <div >
+        <img src="/assets/newbootcamp/LEARNING.png"  />
+      </div>
+    </div>
+    <div class="rounded-xl p-2 border bg-gray-100">
+     
+       
+          <div
+          
+          >
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                margin: 0 auto;
+                outline: none;
+              "
+              title=""
+              role="button"
+              aria-label="animation"
+              tabindex="0"
+            >
+            <img src="/assets/newbootcamp/learningjourneyimage.png"  />
+          </div>
+          </div>
+        
+       
+
+        <div class="mt-5 flex justify-center">
+          <!-- <button
+            type="button"
+            class="py-3 px-3 md:px-3 lg:px-16 mx-2 mr-4 mb-2 font-medium text-purple-700 focus:outline-none rounded-lg border border-purple-700 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+          >
+            Contact Us
+          </button> -->
+          <button
+          data-modal-target="static-modal" data-modal-toggle="static-modal"
+            type="button"
+            class="focus:outline-none md:px-3 flex font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg px-3 lg:px-16 py-3 mb-2"
+          >
+          <img
+          src="/assets/newbootcamp/lightning.svg"
+            class="mr-2 "
+          />
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </div>
+ 
+</section>
+<section class="grid bg-[#f1f0f3] p-4 lg:px-36 md:px-16 lg:pt-20 pb-12">
+  <div>
+    <h1 class="text-[#ffbe10] font-semibold my-5">SYLLABUS</h1>
+    <h1 class="text-2xl sm:text-3xl my-3 sm:my-5 font-semibold">
+      Zepcode top-tier Curriculum
+    </h1>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5 sm:mt-10">
+    <div class="col-span-2">
+      <div class="rounded-xl shadow-sm bg-[#f8f8f9] px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 p-1 py-3 my-2">
+          <div class="flex items-center">
+            <h1>Download Brochure</h1>
+          </div>
+          <div class="flex mt-5 sm:mt-0 sm:justify-end items-center font-semibold">
+            <button
+              type="button"
+              class="text-white bg-[#520fb7] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-box-arrow-in-down mr-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
+                />
+              </svg>
+              <a href="/assets/newbootcamp/Brochure.pdf" download> Download Brochure</a>
+              
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="shadow-sm">
+        <div class="accordion">
+          <div class="mb-3" *ngFor="let item of courseLists let i = index" >
+            <h2
+              
+              class="bg-[#ffffff] rounded-t-lg px-4"
+              [class.active]="activeIndexCourse === i" (click)="toggleAccordionCourse(i)"
             >
               <button
-                (click)="closeModal()"
-                class="mt-4 p-2  mr-8 sm:mr-20 bg-[#ff6600] hover:bg-[orange] text-white rounded-md"
-              >
-                Close
-              </button>
-        
-             
-              <div class="p-4 rounded-lg shadow ">
-                <div class=" sm:flex sm:justify-center text-left ">
-                  <div class="bg-white border rounded-lg  p-4 ">
+                type="button"
+                class="flex bg-white w-full justify-between p-5"
+               
+              
                 
-                    <h1 class="text-center text-black font-semibold m-2 border-b p-2 mb-4">Fill Your Details</h1>
-                           
-                    <form [formGroup]="contactUsForm" (ngSubmit)="submit()">
-                      <div class="grid md:grid-cols-2 md:gap-6">
-                        <div class="relative  w-full mb-1 sm:mb-5 group">
-                          <div class="mb-5">
-                            <label
-                              for="base-input"
-                              class=" block mb-2 text-sm font-medium text-gray-900 "
-                              >First Name</label
-                            >
-                            <input
-                              type="text"
-                              id="base-input"
-                              placeholder="Enter First Name"
-                              formControlName="firstname"
-                              (keypress)="omit_special_char($event)"
-            
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            />
-                            <span
-                              class="text-red-600"
-                              *ngIf="
-                              (formSubmitted || contactUsForm.controls['firstname'].touched) &&
-                              contactUsForm.controls['firstname'].errors?.['required']"
-                              >First name is Required *</span
-                            >
-                          </div>
-                        </div>
-                        <div class="relative  w-full mb-1 sm:mb-5 group">
-                          <div class="mb-5">
-                            <label
-                              for="base-input"
-                              class="block mb-2 text-sm font-medium text-gray-900 "
-                              >Last Name</label
-                            >
-                            <input
-                              type="text"
-                              id="base-input"
-                              placeholder="Enter Last Name"
-                              formControlName="lastname"
-                              (keypress)="omit_special_char($event)"
-            
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            />
-                          </div>
-                        </div>
+              >
+                <!-- <span>What is Flowbite?</span> -->
+
+                <div class="flex gap-2 justify-between">
+                  <div class="flex-none hidden sm:block">
+                    <div class="relative w-24">
+                      <img src="/assets/newbootcamp/linux.avif" alt="" />
+                      <div
+                        class="absolute  text-xs px-3 py-0.5 -top-1 left-4 rounded-2xl shadow-sm bg-white"
+                      >
+                        Module {{item.coursecount}}
                       </div>
-                      <div class="grid md:grid-cols-2 md:gap-6">
-                        <div class="relative  w-full mb-1 sm:mb-5 group">
-                          <div class="mb-5">
-                            <label
-                              for="base-input"
-                              class="block mb-2 text-sm font-medium text-gray-900 "
-                              >Email</label
-                            >
-                            <input
-                              type="text"
-                              id="base-input"
-                              placeholder="Enter Email"
-                              ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                              formControlName="email"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            />
-              
-                            <span
-                            class="text-red-600"
-                            *ngIf="
-                            (formSubmitted || contactUsForm.controls['email'].touched) &&
-                            contactUsForm.controls['email'].errors?.['required']"
-                            >Email  is Required *</span
-                          >
-                          <div
-                            class="text-red-600"
-                            *ngIf="
-                              contactUsForm.controls['email'].invalid &&
-                              contactUsForm.controls['email'].touched &&
-                              contactUsForm.get('email')?.hasError('email')
-                            "
-                          >
-                            Please enter a valid email address.
-                          </div>
-                          <div
-                            class="text-red-600"
-                            *ngIf="
-                              contactUsForm.controls['email'].touched &&
-                              contactUsForm.get('email')?.hasError('pattern')
-                            "
-                          >
-                            Please enter a valid email address.
-                          </div>
-                          </div>
-                        </div>
-                        <div class="relative w-full mb-1 sm:mb-5 group">
-                          <div class="mb-5">
-                            <label
-                              for="base-input"
-                              class="block mb-2 text-sm font-medium text-gray-900 "
-                              >Phone</label
-                            >
-                            <input
-                              type="text"
-                              pattern="^[6-9][0-9]{9}$"
-                              placeholder="Enter  mobile number"
-                              maxlength="10"
-                              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                              id="base-input"
-                              formControlName="mobile_number"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            />
-                            <span
-                              class="text-red-600"
-                              *ngIf="
-                              (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
-                              contactUsForm.controls['mobile_number'].errors?.['required']"
-                              >Phone Number is Required *</span
-                            >
-                            <span
-                              class="text-red-600"
-                              *ngIf="
-                              (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
-                              contactUsForm.controls['mobile_number'].errors?.['pattern']"
-                            >
-                             Please enter valid number
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-              
-                    
-              
-                      <div class="text-center">
-                        <button
-                          type="submit"
-                          class="text-white bg-[#ff9500] hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-                        >
-                          Save
-                        </button>
-                      </div>
-                    </form>                    </div>
                     </div>
-               </div>
+                  </div>
+                  <div class="grow text-left sm:pl-5">
+                    <h1 class="font-semibold text-xl mb-3">
+                      {{item.name}}
+                    </h1>
+                    <!-- <div class="grid gap-2 sm:gap-0 grid-cols-1 sm:grid-cols-3"> -->
+                    <div class="grid gap-2 sm:gap-0 grid-cols-1">
+
+                    
+                    <small
+                      class="text-[#9c76d5] text-center  bg-[#f5f4fb]  sm:mb-0 px-5 py-2 rounded-3xl sm:mx-2"
+                      >{{item.courseheading}}</small
+                    >
+                    <!-- <small
+                      class="text-[#9c76d5] text-center bg-[#f5f4fb] px-5 py-2 rounded-3xl mx-2"
+                    >
+                      Bash Scripting
+                    </small>
+                    <small
+                      class="text-[#9c76d5] text-center bg-[#f5f4fb] px-5 py-2 rounded-3xl sm:mx-2"
+                      >Crontab
+                    </small> -->
+                  </div>
+                  </div>
+                </div>
+
+                <!-- <div class="flex-none text-right hidden sm:block">{{item.time}}</div> -->
+                <a class="bg-[#f1f0f3] p-2 rounded-full">
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </a>
+              </button>
+            </h2>
+            <div
+            
+              [class.active]="activeIndexCourse === i"
+              class=" accordion-content bg-[#ffffff] p-4 rounded-b-xl mb-3"
+            
+            >
+              <div class="p-4 bg-[#f1f0f3] rounded-lg mb-3" *ngFor="let item of item.chapter">
+                <p class="mb-1 text-gray-500">CHAPTER {{item.chapternumber}}</p>
+                <span> {{item.chaptername}}</span>
+              </div>
+           
             </div>
-        
           </div>
         </div>
-     </div>
+      </div>
+
+      <div
+        class="relative ml-2 sm:ml-0 rounded-lg border-2 border-purple-800 bg-white shadow-lg mt-5 p-6"
+      >
+        <div class="flex justify-between">
+          <div class="pl-6 pt-3">
+            <h1 class="font-semibold text-xl mb-3">
+              Zepcode’s Placement Assistance
+            </h1>
+
+            <p>
+              Our career counselors are here to help whenever you need them
+            </p>
+          </div>
+          <div>
+            <a >
+              <img
+                src="assets/newbootcamp/placementsupport.avif"
+                class="w-20"
+                
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 mt-8">
+          <div
+            class=" p-4 border-2  sm:border-r-0 rounded-lg border-yellow-400"
+            style="
+              background-image: linear-gradient(
+                to right,
+                rgba(255, 186, 0, 0.19) 50%,
+                transparent 100%
+              );
+            "
+          >
+            <div class="h-8 w-8 mb-5 bg-[#ffba00] rounded-lg p-2">
+              <img
+                src="/assets/newbootcamp/yellowgradientarrowcircle.png"
+                class="bg-transparent"
+                alt=""
+              />
+            </div>
+            <a>
+              <h5 class="mb-2 text-sm font-semibold text-[#ffca3c]">
+                Craft a perfect profile
+              </h5>
+            </a>
+            <small class="mb-3 font-normal text-gray-500">
+              Create powerful resumes and standout social profiles.
+            </small>
+          </div>
+          <div
+            class=" p-4 border-2  sm:border-r-0 rounded-lg border-purple-500"
+            style="
+              background-image: linear-gradient(
+                to right,
+                rgba(82, 15, 183, 0.19) 50%,
+                transparent 100%
+              );
+            "
+          >
+            <div class="h-8 w-8 mb-5 bg-[#520fb7] rounded-lg p-2">
+              <img
+                src="/assets/newbootcamp/dumbbell.png"
+                class="bg-transparent"
+                alt=""
+              />
+            </div>
+            <a>
+              <h5 class="mb-2 text-sm font-semibold text-[#5310b7]">
+                Prepare for your Interview
+              </h5>
+            </a>
+            <small class="mb-3 font-normal text-gray-500">
+            
+              Get better at interviews by practicing with our experts in mock sessions.
+              
+            </small>
+          </div>
+          <div
+            class=" p-4 border-2  sm:border-r-0 rounded-lg border-green-400"
+            style="
+              background-image: linear-gradient(
+                to right,
+                rgba(72, 196, 121, 0.19) 50%,
+                transparent 100%
+              );
+            "
+          >
+            <div class="h-8 w-8 mb-5 bg-[#48c479] rounded-lg p-2">
+              <img
+                src="/assets/newbootcamp/greengradientstar.png"
+                class="bg-transparent"
+                alt=""
+              />
+            </div>
+            <a>
+              <h5 class="mb-2 text-sm font-semibold text-[#48c479]">
+                Secure your dream job
+              </h5>
+            </a>
+            <small class="mb-3 font-normal text-gray-500">
+              Get really good at what you do and become a pro in your field.
+            </small>
+          </div>
+        </div>
+
+        <div class="PlacementAssistance__StyledDecorator-bltylq-2 eeExt">
+          ⭐
+        </div>
+      </div>
     </div>
 
+    <div>
+      <div class="mt-2">
+        <div class="flex  items-center bg-white rounded-lg p-6 mb-3">
+          <div class="flex-shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-play-circle text-purple-800"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+              />
+              <path
+                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"
+              />
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0 ms-4">
+            <p class="text-xl font-semibold">600</p>
+            <p class="text-sm text-gray-500">Hours practical learning</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-6">
+          <h1 class="text-xl font-semibold my-3">Speak to career counselor</h1>
+          <p class="my-3">Book a session, ask your doubts away</p>
+
+          <form [formGroup]="contactUsbootcampForm" (ngSubmit)="submitform()">
+            <div class="grid gap-6">
+              <div class="mb-3">
+                <input
+                  type="text"
+                 
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  placeholder="Enter First Name"
+                  formControlName="firstname"
+                  (keypress)="omit_special_char($event)"
+                  required
+                />
+                <span
+                class="text-red-600"
+                *ngIf="
+                (formSubmittedbootcamp || contactUsbootcampForm.controls['firstname'].touched) &&
+                contactUsbootcampForm.controls['firstname'].errors?.['required']"
+                >First name is Required *</span
+              >
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  placeholder="Enter Last Name"
+                    formControlName="lastname"
+                    (keypress)="omit_special_char($event)"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                 
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  placeholder="Enter Email"
+                  ng-pattern="/^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/"
+                  formControlName="email"
+                  required
+                />
+                <span
+                class="text-red-600"
+                *ngIf="
+                (formSubmittedbootcamp || contactUsbootcampForm.controls['email'].touched) &&
+                contactUsbootcampForm.controls['email'].errors?.['required']"
+                >Email  is Required *</span
+              >
+              <div
+                class="text-red-600"
+                *ngIf="
+                  contactUsbootcampForm.controls['email'].invalid &&
+                  contactUsbootcampForm.controls['email'].touched &&
+                  contactUsbootcampForm.get('email')?.hasError('email')
+                "
+              >
+                Please enter a valid email address.
+              </div>
+              <div
+                class="text-red-600"
+                *ngIf="
+                  contactUsbootcampForm.controls['email'].touched &&
+                  contactUsbootcampForm.get('email')?.hasError('pattern')
+                "
+              >
+                Please enter a valid email address.
+              </div>
+              </div>
+              </div>
+              <div class="my-5">
+                <input
+                  type="text"
+                  
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  pattern="^[6-9][0-9]{9}$"
+                    placeholder="Enter  mobile number"
+                    maxlength="10"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    id="base-input"
+                    formControlName="mobile_number"
+                />
+                <span
+                class="text-red-600"
+                *ngIf="
+                (formSubmittedbootcamp || contactUsbootcampForm.controls['mobile_number'].touched) &&
+                contactUsbootcampForm.controls['mobile_number'].errors?.['required']"
+                >Phone Number is Required *</span
+              >
+              <span
+                class="text-red-600"
+                *ngIf="
+                (formSubmittedbootcamp || contactUsbootcampForm.controls['mobile_number'].touched) &&
+                contactUsbootcampForm.controls['mobile_number'].errors?.['pattern']"
+              >
+               Please enter valid number
+              </span>
+              </div>
+              <div class="mb-3">
+                <textarea
+                id="message"
+                formControlName="Message"
+                rows="4"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Leave a comment..."
+              ></textarea>
+                
+              </div>
+            
+            <div class="text-center">
+              <button
+                type="submit"
+                [disabled]="disable"
+                class="text-white bg-[#ff9500] hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="grid bg-[#ffffff] p-4 lg:px-36 md:px-16 md:py-16 lg:py-28">
+  <div>
+    <h1 class="text-[#ffbe10] font-semibold my-5">SYLLABUS</h1>
+    <h1 class="text-3xl my-5 font-semibold">Projects and Case studies</h1>
+  </div>
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
+   
+      
+
+<div class=" relative p-6 bg-white border  border-gray-200 rounded-lg shadow  " >
+<img src="/assets/newbootcamp/box.avif " class="w-16 ">
+    <img src="/assets/newbootcamp/starproject.png" class="w-10 relative bottom-20 left-3">
+
+  <p class="mb-3 font-normal pb-20 ">Industry relevant Projects</p>
+  <p class=" my-10 mx-3 lg:mr-8  absolute bottom-0 p-3 rounded grid content-center bg-[#f6f3fb]  text-[#8558cd]
+  ">
+  Experience to work on best projects.
+     
+</p>
+</div>
+
+    
+   
+      
+
+<div class=" bg-white border border-gray-200 rounded-lg shadow ">
+  <a >
+    <img class="rounded-t-lg" src="/assets/newbootcamp/Ecom.png" />
+  </a>
+  <div class="p-5">
+      <a >
+          <!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">E-Commerce</h5> -->
+      </a>
+      <p class="mb-3 font-normal text-gray-700 ">Get ready to learn how to build real e-commerce projects
+        with our training. Our expert instructors will guide you
+        through each step, giving you hands-on experience and
+        practical skills. By the end, you'll be able to create
+        successful online stores that meet modern consumer
+        needs.
+        </p>
+     
+  </div>
+</div>
+
+   
+    
+      
+
+      <div class=" bg-white border border-gray-200 rounded-lg shadow">
+        <a >
+            <img class="rounded-t-lg" src="/assets/newbootcamp/chat.png" />
+        </a>
+        <div class="p-5">
+            <a >
+                <!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Chat Application</h5> -->
+            </a>
+            <p class="mb-3 font-normal text-gray-700 ">We make you learn how to develop chat applications
+              from scratch. Our training provide practical, hands-on
+              experience, guiding you through each step of the process.
+              By the end, you'll have the skills and confidence to create
+              fully functional chat applications that meet the demands
+              of today's communication landscape.</p>
+           
+        </div>
+      </div>
+      
+         
+
+  </div>
+</section>
+
+<section class="bg-[#fdfdfd] p-4 lg:px-36 md:px-16 lg:pl-44 md:pt-10 ">
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="mt-3 px-2">
+      <h1 class="text-[#ffbe10] font-semibold my-5">CERTIFICATION</h1>
+      <h1 class="sm:text-3xl text-2xl my-3  sm:my-5 font-semibold">
+        Get certified and become an expert
+      </h1>
+      <div class="sm:my-10 my-3">
+        <ul>
+          <li *ngFor="let item of CERTIFICATIONLists" class="flex my-5 pr-2 sm:my-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-chevron-right bg-[#fee8b1] rounded-full p-2 mr-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+            <span class="mr-2">{{ item.name }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-10 flex">
+       
+        <button
+        data-modal-target="static-modal" data-modal-toggle="static-modal"
+          type="button"
+          class=" md:px-3 focus:outline-none flex font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 px-3 focus:ring-purple-300 rounded-lg sm:px-10 py-3 mb-2"
+        >
+        <img
+        src="/assets/newbootcamp/lightning.svg"
+          class="mr-2 "
+        />
+          Contact Us
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="hOFzYc shadow-xl flex md:items-start items-center md:mt-8 mt-3 sm:mt-0 p-4 mx-4 lg:ml-14 md:ml-4  justify-center ">
+        <!-- <img src="/assets/newbootcamp/certificate.avif" class="z-10" alt="" /> -->
+        <img src="/assets/newbootcamp/zepcodecertificate.png" class="z-10" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-[#fdfdfd] p-4 lg:px-36 md:px-16 lg:pl-44 sm:pt-28">
+  <div class="mt-3">
+    <h1 class="text-[#ffbe10] font-semibold my-5">MENTORS</h1>
+    <h1 class="lg:text-3xl text-2xl my-3 sm:my-5 font-semibold">
+      Learn Full Stack Development From The Best Industry    </h1>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 bg-white p-8 rounded-xl shadow-xl">
+      <div class="flex relative item-center mb-5 sm:mb-0  text-xl">
+        <img src="/assets/newbootcamp/mentor.avif" class="w-14 h-14 mr-7">
+        <div class="p-1 rounded-full w-6 top-12 left-4  absolute bg-[#520fb7]"><img  src="/assets/newbootcamp/star.png"></div>
+        <div>
+          <h1 class="text-[#5218bb]  text-xl lg:text-2xl font-semibold">
+            Get help from hundreds of great mentors to answer your doubts          </h1>
+          <p class=" text-sm">Get yourself upskilled with the help of these mentors</p>
+        </div>
+      </div>
+      <div><div class=" flex justify-end ">
+       
+        <button
+        data-modal-target="static-modal" data-modal-toggle="static-modal"
+        type="button"
+        class="focus:outline-none flex font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg sm:px-16 md:px-6 px-3 py-3 mb-2"
+      >
+      <img
+      src="/assets/newbootcamp/lightning.svg"
+        class="mr-2 "
+      />
+       Contact Us
+      </button>
+      </div></div>
+    
+    </div>
+
+   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+
+  <div class="flex items-center shadow-lg mt-5 p-5 bg-white rounded-xl" *ngFor="let item of Mentors">
+    <div class="flex-shrink-0">
+        <img class="w-24 h-24 rounded-full" src="{{item.img? item.img :'/assets/newbootcamp/mentor.avif'}}" >
+    </div>
+    <div class="flex-1  min-w-0 ms-4 py-2 ">
+        <p class="lg:text-2xl text-xl font-sembold text-gray-900  ">
+          {{item.company}}
+        </p>
+        <p class="text-sm text-gray-500 truncate ">
+          {{item.name}}
+        </p>
+        <hr class="mt-2">
+        <div class="flex justify-between py-3">
+          <h1>{{item.experiennce}} </h1>
+          
+          <!-- <img src="/assets/newbootcamp/linkedincolored.svg" class="w-6" alt=""> -->
+        </div>
+    </div>
+   
+</div> 
+
+</div>
+<!-- <div class="p-4 sm:px-32 xl:px-32 lg:px-24 sm:py-10 md:py-5 md:px-8"> -->
+
+<!-- <div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of Mentors">
+      <ng-template carouselSlide [id]="slide.id" >
+        <div class=" rounded-md">
+          <div
+            class=""
+          >
+            <p>
+              {{ slide.company }}
+            </p>
+          </div>
+  
+          <div class="flex items-center px-10 py-4 bg-[#fcfcfd]">
+            <div class="flex-shrink-0">
+              <img
+                class="w-12 h-12 rounded-lg"
+                [src]="slide.img"
+                alt="Neil image"
+              />
+            </div>
+            <div class="flex-1 min-w-0 ms-4">
+              <p
+                class="text-sm font-medium text-gray-900 truncate dark:text-white"
+              >
+                {{ slide.name }}
+              </p>
+            </div>
+            <div
+              class="inline-flex items-center text-base text-gray-400 dark:text-white"
+            >
+              {{ slide.experiennce  }}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div> -->
+
+<!-- </div> -->
+
+   <!-- </div> -->
+  </section>
+
+    
+    
+
+
+
+<section class="bg-[#fdfdfd] p-4 lg:px-36  md:px-16 lg:pl-44 md:pt-10 pt-10 lg:py-28">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="mt-3">
+      <h1 class="text-[#ffbe10] font-semibold my-5">Alumni Support</h1>
+      <h1 class="sm:text-3xl text-2xl my-3 sm:my-5 font-semibold">Stay connected with alumni for a long time</h1>
+      <div class="my-10">
+        <ul>
+          <li *ngFor="let item of AlumniSupports" class="flex my-5 sm:my-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-chevron-right bg-[#fee8b1] rounded-full p-2 mr-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div class=" flex justify-center px-4 py-2 rounded-lg bg-[#f4e9ff]">
+         
+          <button
+          data-modal-target="static-modal" data-modal-toggle="static-modal"
+            type="button"
+            class="focus:outline-none flex font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg px-10 py-3 mb-2"
+          >
+          <img
+          src="/assets/newbootcamp/lightning.svg"
+            class="mr-2 "
+          />
+            Contact Us
+          </button>
+        </div>
+       
+      </div>
+    </div>
+    <div>
+      <div class="flex mt-5  justify-center">
+        <img src="/assets/newbootcamp/alumni.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#fdfdfd] p-4 lg:px-36 md:px-16 md:pt-2 lg:pl-44 lg:pb-28">
+  <div class="mt-3">
+    <h1 class="sm:text-3xl text-2xl my-3 sm:my-5 font-semibold">
+      Zepcode Program vs Other Programs    </h1>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 mt-3 gap-3">
+    <div>
+      <div class="rounded-3xl border">
+        <div class="flex items-center p-4">
+          <div class="flex-shrink-0">
+            <img
+              class="w-14 h-14 rounded-lg"
+              src="/assets/newbootcamp/benefitisa.svg"
+              alt="Neil image"
+            />
+          </div>
+          <div class="flex-1 min-w-0 ms-4">
+            <p class="text-xl  break-all font-semibold text-gray-900">Features</p>
+          </div>
+        </div>
+        <h1 class="text-4xl font-semibold px-4 text-gray-600 my-3 mb-8"> ₹ FEE</h1>
+
+  
+        <ul class="px-4">
+         
+           <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              Affordability
+          </li>
+          
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              Practical learning
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              Duration
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+            learning outcome
+          </li>
+          
+          <li class="flex item-center my-3 mb-7 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              Classes conducted by 
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+            Curriculum
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+  
+              Placement  Support
+          </li>
+          
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              Extended Placement Support
+          </li>
+        </ul>
+     
+        <h1
+          class="text-center text-gray-500 font-semibold bg-gray-100 p-4 rounded-b-3xl  bottom-4 w-full"
+        >
+          High Investment
+        </h1>
+      </div>
+    </div>
+    <div
+      class="rounded-3xl border"
+      style="
+        box-shadow: rgba(82, 15, 183, 0.18) 0px 2px 16px;
+        background-image: linear-gradient(rgb(251, 240, 251), white);
+      "
+    >
+      <div class="flex items-center p-4">
+        <div class="flex-shrink-0">
+          <img
+            class="w-14 h-14 rounded-lg"
+            src="/assets/newbootcamp/zepcodelogo.png"
+            alt="Neil image"
+          />
+        </div>
+        <div class="flex-1  min-w-0 ms-4">
+          <p class="text-xl font-semibold  text-gray-900">Zepcode Bootcamp</p>
+        </div>
+      </div>
+      <h1 class="text-4xl font-semibold px-4  amount my-3">₹1,20,000</h1>
+
+      <ul class="px-4">
+        <li
+          class="flex item-center my-3 break-all"
+          *ngFor="let item of learningToEarnLists"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-up bg-[#28dd7a] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+            />
+          </svg>
+          {{ item.name }}
+        </li>
+      </ul>
+      <p
+        class="flex justify-center gap-3 text-[#8f60f5]"
+        style="
+          background: linear-gradient(
+            93.31deg,
+            rgba(54, 50, 255, 0.1) 1.66%,
+            rgba(150, 50, 255, 0.1) 100.35%
+          );
+          padding: 8px 0px;
+        "
+      >
+        <img src="/assets/newbootcamp/benefitdreamjob.svg" alt="" />
+        <span class="text-xl"> Get your dream Job</span>
+      </p>
+
+      <div class=" flex justify-center">
+        <button
+        data-modal-target="static-modal" data-modal-toggle="static-modal"
+          type="button"
+          class="focus:outline-none flex my-3 font-semibold text-white bg-purple-800 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg px-14 py-3 mb-2"
+        >
+          <img
+          src="/assets/newbootcamp/lightning.svg"
+            class="mr-2 "
+          />
+          Contact Us
+        </button>
+      </div>
+    </div>
+    
+    <div>
+      <div class="rounded-3xl border">
+        <div class="flex items-center p-4">
+          <div class="flex-shrink-0">
+            <img
+              class="w-14 h-14 rounded-lg"
+              src="/assets/newbootcamp/benefitdegree.svg"
+              alt="Neil image"
+            />
+          </div>
+          <div class="flex-1 min-w-0 ms-4">
+            <p class="text-xl  font-semibold text-gray-900">Other company's training programs</p>
+          </div>
+        </div>
+        <h1 class="text-4xl  font-semibold px-4 text-gray-600 mb-5 my-3">
+          ₹ 2.5L - 5L
+        </h1>
+  
+        <ul class="px-4">
+        
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+            No 
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+              20 hours
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+  
+              10-12 months
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+             Shallow
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+              />
+            </svg>
+              In house Teachers (Avg Exp. > 2 yrs)
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-up bg-[#28dd7a] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+            />
+          </svg>
+              Industry Aligned
+          </li>
+         
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+  
+             Limited
+          </li>
+          <li class="flex item-center my-3 break-all">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+            No
+          </li>
+        </ul>
+  
+        <h1
+          class="text-center text-gray-500 font-semibold bg-gray-100 p-4 rounded-b-3xl bottom-0 w-full"
+        >
+          Fancy degree
+        </h1>
+      </div>
+    </div>
+    <div><div class="rounded-3xl border">
+      <div class="flex items-center p-4">
+        <div class="flex-shrink-0">
+          <img
+            class="w-14 h-14 rounded-lg"
+            src="/assets/newbootcamp/benefitcertification.svg"
+            alt="Neil image"
+          />
+        </div>
+        <div class="flex-1 min-w-0 ms-4">
+          <p class="text-xl font-semibold  text-gray-900">Online certification program</p>
+        </div>
+      </div>
+      <h1 class="text-4xl font-semibold  px-4 text-gray-600 my-3 mb-5">₹ 50k - 70k</h1>
+
+      <ul class="px-4">
+  
+        <li class="flex item-center my-3 ">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-arrow-up bg-[#28dd7a] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+          />
+        </svg>
+          Yes 
+        </li>
+        <li class="flex item-center my-3 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+            />
+          </svg>
+          	12-15 hours
+        </li>
+        <li class="flex item-center my-3 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-up bg-[#28de79] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+            />
+          </svg>
+
+          	12-18 months
+        </li>
+        <li class="flex item-center my-3 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+            />
+          </svg>
+          Shallow 
+        </li>
+        <li class="flex item-center my-3 break-all">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+            />
+          </svg>
+          	In house Teachers (Avg Exp. > 2yrs)
+        </li>
+        <li class="flex item-center my-3 break-all">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-arrow-up bg-[#28dd7a] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+          />
+        </svg>
+
+          	Industry Aligned
+        </li>
+        
+        <li class="flex item-center my-3 break-all">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+            />
+          </svg>
+          limited
+        </li>
+        <li class="flex item-center my-3 break-all">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrow-down-short bg-[#cc1818] p-1 mt-1 rounded-full text-white mr-2 font-semibold"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"
+            />
+          </svg>
+          No
+        </li>
+      </ul>
+   
+      <h1
+        class="text-center text-gray-500 font-semibold bg-gray-100 p-4 rounded-b-3xl bottom-0 w-full"
+      >
+        Low Impact
+      </h1>
+    </div></div>
+  </div>
+</section>
+
+<section class="bg-[#fdfdfd] ">
+  <div
+    class=" iEgdG p-4 bg-[#520fb7] sm:bg-white "
+  >
+  <div class="flex relative justify-start sm:justify-center p-4">
+    <div> <div class="flex items-center">
+      <div class="flex-shrink-0">
+          <img class="w-8 h-8 bg-transparent" src="/assets/newbootcamp/moneybackguarantee.avif" alt="Neil image">
+      </div>
+      <div class="flex-1 min-w-0 ms-4">
+          <p class="text-2xl font-medium text-[#feb900] ">
+              100%
+          </p>
+          <p class="text-sm text-white ">
+            learning Outcome
+          </p>
+      </div>
+     
+  </div></div>
+    <div> 
+
+
+     
+     
+    </div>
+    
+  </div>
+<div class="grid grid-cols-1 p-4 lg:grid-cols-2 md:mt-1 mt-5 relative md:px-10 lg:px-40">
+  <div class="pb-10">
+    <h1 class=" md:my-0  my-2 text-[#ffba00]">
+    
+    
+    PROGRAM FEE
+    </h1>
+    <h1 class="sm:text-3xl my-5 text-2xl font-semibold text-white">Enroll for success
+    </h1>
+    
+   
+    <div class="bg-[#460d9c] p-5  lg:p-10 sm:w-96 my-3">
+      <h1 class="text-[#ffba00] font-semibold"> <span class="text-white md:text-2xl text-3xl">₹ </span> <span class=" md:text-2xl  text-3xl">7,500 </span>/month</h1>
+      <h1 class="text-gray-400  md:text-sm text-2xl my-2">Total amount ₹ 60,000
+    
+        </h1> 
+    
+    </div>
+    
+    <button   data-modal-target="static-modal" data-modal-toggle="static-modal" type="button" class="py-2.5 my-20  px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 ">Contact Us</button>
+    
+      
+    </div>
+    <div
+    class="  sm:relative md:-translate-x-10 lg:-translate-x-32 sm:pt-10   sm:w-[48vw]   "
+      style="
+       
+       
+       outline: none;"
+      title=""
+      role="button"
+      aria-label="animation"
+     
+    >
+     <img src="assets/newbootcamp/path.png" class=" rounded-3xl shadow-lg" alt="">
+    </div>
+</div>
+ 
+ 
+
+   
+
+  </div>
+
+</section>
+
+
+<section class="bg-[#fdfdfd] p-4 mt-5 md:mx-16 lg:mx-36 lg:mt-24 md:mt-10">
+<div>
+  <h1 class="text-[#ffbe10] font-semibold my-3 lg:my-5">TESTIMONIALS</h1>
+  <h1 class="sm:text-3xl md:text-2xl  text-xl my-3 sm:my-5 font-semibold">Read alumni success stories </h1>
+</div>
+  <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
+
+ 
+<a *ngFor="let item of testimonials" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+  <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.img" alt="">
+  <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> {{item.name}}</h5>
+      <p class="mb-3 font-normal text-gray-700 ">
+        {{item.message}}      </p>
+  </div>
+</a>
+
+ 
+ 
+
+  
+  </div>
 </section>
 
 
 
 
 
+<section class="bg-[#fdfdfd] p-4 mt-5 md:mx-16 lg:mx-36 md:mt-10 lg:mt-24">
+<div class="grid grid-cols-1 sm:grid-cols-2 bg-[#5514b8] p-8 rounded-xl">
+  <div class="flex mb-5 sm:mb-0 item-center text-white text-sm lg:text-xl">
+    <img src="/assets/newbootcamp/interesteindemo.png" class="w-10 h-10 mr-7">
+    Interested in our program! Enroll today  </div>
+  <div><div class=" flex justify-end">
+    
+    <button
+   
+      type="button"
+      data-modal-target="static-modal" data-modal-toggle="static-modal" class=" focus:outline-none flex font-semibold text-purple-800 bg-white focus:ring-4 focus:ring-purple-300 rounded-lg sm:px-5 px-3 py-3 mb-2"
+    >
+    
+      Contact Us
+    </button>
+  </div></div>
+
+</div>
+
+  </section>
+
+
+  <section class="bg-[#fdfdfd] p-4 pt-10  md:mx-16 lg:mx-36 md:mt-10 lg:mt-20">
+    <h1 class="text-[#ffbe10] font-semibold my-3 sm:my-5">FREQUENTLY ASKED QUESTIONS</h1>
+    <h1 class="sm:text-3xl md:text-2xl text-xl my-3 sm:my-5 font-semibold">Read more to know more point 👆</h1>
+    <div class="shadow-sm">
+      <div class="accordion">
+          <div *ngFor="let item of accordionItems; let i = index" class="mb-5  ">
+            <h2
+            [class.active]="activeIndex === i" (click)="toggleAccordion(i)"
+            class="bg-white rounded-t-lg shadow px-4"
+            >
+              <button
+                type="button"
+                class="flex w-full text-left  bg-white justify-between p-5"
+           
+                >
+                <span>{{ item.title }}</span>
+  
+                <a class="">
+                  <svg
+                    data-accordion-icon
+                    class="w-3 h-3 rotate-180 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </a>
+              </button>
+            </h2>
+            <div class="accordion-content shadow-sm p-4 " [class.active]="activeIndex === i">
+             <span class="px-4"> {{ item.description }}</span>
+            </div>
+          </div>
+        </div>
+        </div>
+   </section>
+  
+<section class="bg-[rgb(253,253,253)] p-4 md:mx-16 lg:mx-36 md:mt-10 lg:mt-20">
+  <div class="grid grid-cols-1 sm:grid-cols-2 bg-[#e1faec] p-8 rounded-xl">
+    <div class="flex  item-center mb-5 sm:mb-0 text-white text-xl">
+      <img src="/assets/newbootcamp/requestCallbackBannerIcon.svg" class="w-14 h-14 mr-7">
+      <div >
+        <h1 class="text-[#0ca43a] font-semibold">
+          Still have questions?
+        </h1>
+        <p class="text-[#62b191] text-sm">Request a callback to get in touch with our academic counsellors.</p>
+      </div>
+    </div>
+    <div><div class=" flex justify-end ">
+     
+     
+      <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="block focus:outline-none  font-semibold text-white bg-[#48c479] hover:bg-green-700  rounded-lg sm:px-5 px-3 py-3 mb-2" type="button">
+        Contact Us
+      </button>
+    </div></div>
+  
+  </div>
+  
+    </section>
+
+    
+
+
+<!-- Modal toggle -->
+
+
+<!-- Main modal -->
+<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                <h3 class="text-xl  font-semibold text-gray-900 ">
+                  Fill Your Details
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="static-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+              <form [formGroup]="contactUsForm" (ngSubmit)="submit()" class="p-4">
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative  w-full mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class=" block mb-2 text-sm font-medium text-gray-900 "
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                       
+                        placeholder="Enter First Name"
+                        formControlName="firstname"
+                        (keypress)="omit_special_char($event)"
+      
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['firstname'].touched) &&
+                        contactUsForm.controls['firstname'].errors?.['required']"
+                        >First name is Required *</span
+                      >
+                    </div>
+                  </div>
+                  <div class="relative  w-full mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Last Name</label
+                      >
+                      <input
+                        type="text"
+                       
+                        placeholder="Enter Last Name"
+                        formControlName="lastname"
+                        (keypress)="omit_special_char($event)"
+      
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative  w-full mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Email</label
+                      >
+                      <input
+                        type="text"
+                        id="base-input"
+                        placeholder="Enter Email"
+                        ng-pattern="/^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/"
+                        formControlName="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+        
+                      <span
+                      class="text-red-600"
+                      *ngIf="
+                      (formSubmitted || contactUsForm.controls['email'].touched) &&
+                      contactUsForm.controls['email'].errors?.['required']"
+                      >Email  is Required *</span
+                    >
+                    <div
+                      class="text-red-600"
+                      *ngIf="
+                        contactUsForm.controls['email'].invalid &&
+                        contactUsForm.controls['email'].touched &&
+                        contactUsForm.get('email')?.hasError('email')
+                      "
+                    >
+                      Please enter a valid email address.
+                    </div>
+                    <div
+                      class="text-red-600"
+                      *ngIf="
+                        contactUsForm.controls['email'].touched &&
+                        contactUsForm.get('email')?.hasError('pattern')
+                      "
+                    >
+                      Please enter a valid email address.
+                    </div>
+                    </div>
+                  </div>
+                  <div class="relative w-full mb-1 sm:mb-5 group">
+                    <div class="mb-5">
+                      <label
+                        for="base-input"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Mobile</label
+                      >
+                      <input
+                        type="text"
+                        pattern="^[6-9][0-9]{9}$"
+                        placeholder="Enter  mobile number"
+                        maxlength="10"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        id="base-input"
+                        formControlName="mobile_number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      />
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
+                        contactUsForm.controls['mobile_number'].errors?.['required']"
+                        >Phone Number is Required *</span
+                      >
+                      <span
+                        class="text-red-600"
+                        *ngIf="
+                        (formSubmitted || contactUsForm.controls['mobile_number'].touched) &&
+                        contactUsForm.controls['mobile_number'].errors?.['pattern']"
+                      >
+                       Please enter valid number
+                      </span>
+                    </div>
+                  </div>
+                </div>
+        
+              
+        
+                <div class="text-center">
+                  <button
+                  data-modal-hide="static-modal"
+                    type="submit"
+                    class="text-white bg-[#ff9500] hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- Modal footer -->
+            
+        </div>
+    </div>
+</div>
