@@ -6,7 +6,8 @@ import {
   
 } from '@angular/forms';
 import { SeriveService } from '../serive.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 interface slider {
   img: string;
 }
@@ -15,17 +16,21 @@ interface accordionItem {
   title: string;
   description:string;
 }
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+ 
+
   contactUsForm!: FormGroup;
   errorMessage: any;
   formSubmitted: boolean = false;
   SubmitSuccessful: boolean = false;
   showModal = false;
+  
 
   slides: slider[] = [
     {img: '/assets/slider/image1.png'},

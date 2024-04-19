@@ -43,7 +43,8 @@ interface Mentor{
   company:string;
   experiennce:string;
  
-}interface testimonial{
+}
+interface testimonial{
   id:any;
   img:string;
   name: string;
@@ -109,10 +110,10 @@ export class BootcampComponent  implements OnInit{
     { id:1,name: ' Kapil Chaudhary',img:'/assets/reviews/kapil.png', company: ' Dexbean Technologies',message:`The fullstack development program at Zepcode was
     amazing! I learned a lot from real World projects and live
     classes with experts. It gave me the skills and confidence to
-    start my career in tech. I highly recommend it.`},
-     { id:2,name: '  Vaishali Rana',img:'../../assets/reviews/vaishali.png',company: 'SISL Infotech Pvt. Ltd.',message:`I loved the fullstack development program at Zepcode!
+    start my career in tech. `},
+     { id:2,name: '  Vaishali Rana',img:'/assets/reviews/vaishali.png',company: 'SISL Infotech Pvt. Ltd.',message:`I loved the fullstack development program at Zepcode!
      Learning by doing real World projects and getting job
-     placement was really helpful.`},
+     placement was really helpful. I highly recommend it.`},
     { id:3,name: ' Shubham', img:'/assets/reviews/shubham.png',company: 'Website Tool Box India ',message:`Enrolling in Zepcode's fullstack development program was
     one of the best decisions I've made. The program's
     practical approach and focus on real-world projects gave
@@ -392,20 +393,23 @@ chapter: [
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 1,
+      },
+      550: {
+        items: 1,
       },
       740: {
-        items: 3
+        items: 2,
       },
       940: {
-        items: 4
-      }
+        items: 2,
+      },
     },
-    nav: true
-  }
+    nav: true,
+  };
   activeIndex: number | null = null;
   activeIndexCourse: number | null = null;
 

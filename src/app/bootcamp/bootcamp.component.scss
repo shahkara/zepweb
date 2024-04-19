@@ -1,5 +1,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
 
+
+
 @import url('/src/styles/fonts.css');
 
 *{
@@ -183,23 +185,23 @@
   top: 0px;
   transform: translateZ(-1px);
 }
-.hOFzYc::after {
-  content: "";
-  position: absolute;
-  top: 8%;
-  left: 13%;
-  height: 100%;
-  width: 100%;
-  // background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 12px;
+// .hOFzYc::after {
+//   content: "";
+//   position: absolute;
+//   top: 8%;
+//   left: 13%;
+//   height: 100%;
+//   width: 100%;
+//   background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border-radius: 12px;
  
-  // z-index: -1;
-}
+//   z-index: -1;
+// }
 .hOFzYc {
-  position: relative;
-  overflow: visible;
+  // position: relative;
+  // overflow: visible;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  border-radius: 15px;
   
 }
