@@ -149,7 +149,7 @@ export class BootcampComponent  implements OnInit{
   CERTIFICATIONLists: CERTIFICATIONList[] = [
     {name: ' Certification accepted by 300+ companies'},
     {name: ' Show employers your certified skills'},
-    {name: ' Attract recruiters on LinkedIn with your certificationsAttract recruiters on JobIQ and other platforms with your certifications'},
+    {name: ' Attract recruiters on LinkedIn with your certifications. Attract recruiters on JobIQ and other platforms with your certifications'},
     
     
  ];
@@ -164,19 +164,19 @@ export class BootcampComponent  implements OnInit{
  learningToEarnLists: learningToEarnList[] = [
     
     {name: ' 	Yes'},
-    {name: ' 	40 hours'},
+    {name: ' 	40 hours/week'},
     {name: ' 6 months'},
-    {name: ' 	1  year'},
+    {name: ' 	Guaranteed '},
     {name: ' 	Industry experts (Avg exp. > 5 yrs)'},
-    {name: ' 	Industry aligned'},
-    {name: ' 	1year '},
-    {name: ' 	Expert level '},
+    {name: ' 	Industry Aligned'},
+    {name: ' 	1 year '},
+    {name: ' 	Yes  '},
     
     
  ];
 courseLists: courseList[] = [
   {coursecount:1,
-    name: 'Javascript Fundamental Concept',
+    name: 'Javascript Fundamental Concepts',
   time:'3 week', 
   courseheading:'Master JavaScript Fundamentals to Enhance Problem-Solving and WebDevelopment Skills' ,
   chapter: [
