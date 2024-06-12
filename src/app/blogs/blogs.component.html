@@ -1,26 +1,109 @@
 
-<section class="bg-[#f9fafc] sticky  top-0 z-40">
-  <div class="bg-transparent flex justify-between px-4 py-3 sm:px-8">
-    <div routerLink="/">
-      <img
-        src="/assets/logo/logo.png"
-        class="w-32 logo sm:w-60 cursor-pointer"
-       
-      />
-    </div>
-    <div>
-      <button
-      data-modal-target="static-modal" data-modal-toggle="static-modal"
-        class="shadow-md p-2  text-white border-2 rounded-md bg-[#ff6600] hover:bg-[orange]"
-      >
-        Get started a Project
-      </button>
-    </div>
-  </div>
-</section>
-<router-outlet></router-outlet>
 
-  <!-- <section class=" mt-10  bg-[#161C2D] footer  z-50">
+<section >
+  
+  <div class="bg-gradient-to-t from-purple-400  h-[20vh] lg:h-[40vh] md:h-[20vh]    ">
+    <h2 class=" pl-36 sm:text-5xl sm:pt-20 pt-5 text-2xl  font-bold">Blogs</h2>
+<h3 class=" hidden sm:block pl-36 pt-4">Blog that help beginner designers become true unicorns.</h3>
+   
+    <div
+      class=" lg:mx-36 md:mx-10 mx-10 flex  overflow-auto h-[100vh]  sm:h-auto  cards rounded-lg justify-center sm:gap-x-5   absolute  lg:top-96 md:top-64 top-40 "
+    >
+
+    <div class="grid grid-cols-1 md:grid-cols-3  gap-x-14 gap-y-6 lg:gap-6  md:gap-y-2  md:gap-x-6 ">
+
+     
+        <div
+        *ngFor="let item of this.BlogData" 
+    class="    "
+  >
+  
+
+<div  (click)="gotoDetails(item.slug)"  class=" bg-white border border-gray-200 rounded-lg shadow ">
+  <a >
+      <img class="rounded-t-lg" src="{{ item.imageURL }}" alt="" />
+  </a>
+  <div class="sm:p-5 p-2">
+      <a >
+          <h5 class="mb-2 sm:text-2xl text-xs md:text-sm  font-bold tracking-tight text-gray-900 ">Noteworthy technology acquisitions 2021</h5>
+      </a>
+     
+      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+        <span class="relative flex p-1 md:p-1 sm:px-5 sm:py-2.5 transition-all ease-in duration-75 bg-white  rounded-md group-hover:bg-opacity-0">
+          Read more
+          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+         </svg>
+        </span>
+        </button>
+  </div>
+</div>
+
+   
+        <!-- <div class="bg-white shadow-xl rounded-lg">
+            <img class=" rounded-lg" src="{{ item.imageURL }}" alt="">
+        </div> -->
+      
+  </div>
+  </div>
+      
+    </div>
+
+    
+    </div>
+   
+  </section>
+  <section class="z-50 absolute top-[80vh] md:top-[30vh] mt-[47vh] md:mt-[10vh] xl:mt-[60vh]  pagination sm:mt-[10vh]  pb-10">
+    <div class="sm:pt-52 sm:px-56 md:px-16 flex justify-center  lg:px-36 xl:px-56">
+      <nav class="">
+        <ul class="pagination flex gap-4">
+          <li
+            class="page-item cursor-pointer"
+            [class.disabled]="currentPage === 1"
+          >
+            <a
+              class="page-link"
+              (click)="onPageChange(currentPage - 1)"
+              aria-label="Previous"
+            >
+              <span aria-hidden="true">&laquo;</span>
+              Previous
+            </a>
+          </li>
+  
+          <li
+            *ngFor="let page of getPagesArray()"
+            class="page-item cursor-pointer"
+            [class.active]="page === currentPage"
+          >
+            <a
+              class="page-link px-2"
+              (click)="onPageChange(page)"
+              [ngClass]="{
+                'bg-blue-600 text-white hover:bg-blue-300 hover:text-black':
+                  page === currentPage
+              }"
+              >{{ page }}</a
+            >
+          </li>
+  
+          <li
+            class="page-item cursor-pointer"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <a
+              class="page-link"
+              (click)="onPageChange(currentPage + 1)"
+              aria-label="Next"
+            >
+              Next
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class=" mt-10  bg-[#161C2D] footer  z-50">
       <div class="grid sm:grid-cols-3 gap-6   px-6 sm:px-36 pb-4 ">
   <div class="   pt-4 md:pt-2 xl:mt-10 sm:pt-10 text-gray-400">
 
@@ -76,58 +159,12 @@
       Station, Faridabad , Haryana (121006)  <p class="sm:text-right mt-3">+91 88008 30277</p>
   </div>
   <div class="pt-4 md:pt-2 xl:mt-10 sm:pt-10 text-gray-400">
-    <h1 class="text-gray-400 font-semibold text-center cursor-pointer" routerLink="blogs" >Blogs</h1>
+    <h1 class="text-gray-400 font-semibold sm:text-center cursor-pointer" routerLink="blogs" >Blogs</h1>
   
   </div>
   </div>
-  </section> -->
-
-<!-- <div>
-  <h1 class="text-gray-400 font-semibold  pb-8" >COMPANY</h1>
-  <ul class="text-[#ffffff] text-sm">
-      <li>About us </li>
-      <li>Contact us</li>
-      <li>Careers</li>
-      <li>Press</li>
-    
-  </ul>
+</div> 
+  </section>
   
-  </div> -->
-<!-- <div >
-<h1 class="text-gray-400 font-semibold  pb-8" >Product</h1>
-<ul class="text-[#ffffff] text-sm">
-    <li>Features</li>
-    <li>Pricing</li>
-    <li>News</li>
-    <li>Help desk</li>
-    <li>Support</li>
-</ul>
 
-</div> -->
-<!-- <div>
-    <h1 class="text-gray-400 font-semibold  pb-8" >Services</h1>
-    <ul class="text-[#ffffff] text-sm">
-        <li>Digital Marketing</li>
-        <li>Content Writing</li>
-        <li>SEO for Business</li>
-        <li>UI Design</li>
-    </ul>
-    
-    </div> -->
-   
-        <!-- <div>
-            <h1 class="text-gray-400 font-semibold  pb-8" >LEGAL</h1>
-            <ul class="text-[#ffffff] text-sm">
-                <li>Privacy Policy </li>
-                <li>Terms & Conditions</li>
-                <li>Return Policy</li>
-               
-            </ul>
-            
-            </div> -->
-    <!-- </div> -->
-    <!-- <div class="text-gray-400 text-center text-2xl pt-4">
-        <p><small> &copy; 2024 OneTick Technologies Pvt. Ltd. All Rights Reserved</small></p>
-
-    </div> -->
-<!-- </section> -->
+ 

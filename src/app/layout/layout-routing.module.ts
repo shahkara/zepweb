@@ -5,6 +5,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BootcampComponent } from '../bootcamp/bootcamp.component';
 import { ZepcodeContactComponent } from '../zepcode-contact/zepcode-contact.component';
 import { BootcampContactComponent } from '../bootcamp-contact/bootcamp-contact.component';
+import { BlogsComponent } from '../blogs/blogs.component';
+import { BlogDetailsComponent } from '../blog-details/blog-details.component';
 
 const routes: Routes = [
 
@@ -21,7 +23,22 @@ const routes: Routes = [
   {
     path:'contact',
     component:BootcampContactComponent
+  },
+   {
+    path:'blogs',
+    component:BlogsComponent
+  },
+   {
+   
+    path:'blog_Details',
+    component:BlogDetailsComponent
+  },
+   {
+ 
+    path:'blog_Details/:items',
+    component:BlogDetailsComponent
   }
+
 ];
 
 @NgModule({

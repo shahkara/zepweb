@@ -15,4 +15,10 @@ export class SeriveService {
   addUserData(data: any): Observable<any> {
     return this.http.post<any>(`${this.API_URL}contact/addContactQuery`, data)
   }
+  getZepcodeBlogs(page?:any) {
+    return this.http.get<any>(`${this.API_URL}ZepcodeBlog/showZepcodeBlog?page=${page}`)
+  }
+  getBlogBySlug(slug:any): Observable<any>{
+    return this.http.get<any>(`${this.API_URL}ZepcodeBlog/findZepcodeBlog/${slug}`)
+  }
 }
