@@ -8,6 +8,8 @@ import { ZepcodeContactComponent } from '../zepcode-contact/zepcode-contact.comp
 import { BootcampContactComponent } from '../bootcamp-contact/bootcamp-contact.component';
 import {  ReactiveFormsModule }   from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BlogsComponent } from '../blogs/blogs.component';
+import { BlogDetailsComponent } from '../blog-details/blog-details.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     LayoutComponent,
     BootcampComponent,
     ZepcodeContactComponent,
-    BootcampContactComponent
+    BootcampContactComponent,
+    BlogsComponent,
+    BlogDetailsComponent
   ],
   imports: [
     CommonModule,

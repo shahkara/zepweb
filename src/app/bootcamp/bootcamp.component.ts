@@ -128,13 +128,13 @@ export class BootcampComponent  implements OnInit{
  Outcomes: Outcome[] = [
     // {name: ' 	Learn how to use Linux commands and scripts to automate tasks.'},
     {name: ' 	Master Git for managing code and collaborating on team projects.'},
-    {name: ' 	Excel in coding interviews by solving complex problems using Data Structures and Algorithms.'},
-    {name: ' 	Understand SQL for managing databases and designing schemas effectively.'},
-    {name: ' 	Build robust REST APIs for web applications using the Spring Boot framework.'},
-    {name: ' 	Discover AI tools to enhance coding efficiency.'},
-    {name: ' 	Learn System Design for creating scalable and fault-tolerant systems.'},
-    {name: ' 	Create a strong resume and GitHub profile to impress employers.'},
-    {name: ' 	Practice mock interviews with industry experts for real-life experience.'},
+    {name: ' 	Excel in coding interviews with Data Structures and Algorithms training.'},
+    {name: ' 	Understand SQL for effective database management.'},
+    {name: ' 	Build robust REST APIs using the Spring Boot framework.'},
+    {name: '  Explore AI tools to boost coding efficiency.'},
+    {name: ' 	Learn system design for scalable and fault – tolerant systems.'},
+    {name: ' 	Craft a compelling resume and GitHub profile to impress employers.'},
+    {name: ' 	Practice mock interviews with industry experts for real-life experience in our web development course.'},
   
     
  ]; 

@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .active {
+    font-weight: bold;
+  }
+  @media screen and (min-width:1280px) {
+    .pagination{
+      margin-top: 250px;
+    }
+    
+  } 
+   @media screen and (min-width:1024px) {
+ 
+    
+    .cards{
+      top: 300px;
+    }
+  }
+  *{
+   
+      font-family: "Alata", sans-serif;
+     
+     
+    
+  }
