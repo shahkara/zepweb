@@ -483,6 +483,7 @@ chapter: [
     close(){
     
     this.formSubmitted = false;
+    this.contactUsForm.reset()
 
   }
   submit() {
