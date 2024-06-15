@@ -420,11 +420,13 @@ chapter: [
   formSubmitted: boolean = false;
   formSubmittedbootcamp: boolean = false;
   SubmitSuccessful: boolean = false;
+  loading: boolean = false;
   disable=false;
 
   constructor(
     private service: SeriveService,
     private formBuilder: FormBuilder,
+   
     
   ) {}
   ngOnInit(): void {
@@ -444,7 +446,7 @@ chapter: [
         ],
       ],
       Message:[''],
-      QueryType:' Zepcode Bootcamp Enquiry',
+      QueryType:'Zepcode Bootcamp Enquiry',
 
       enquiryFrom: ['Zepcode Bootcamp'],
     }); 
@@ -462,7 +464,7 @@ chapter: [
         ],
       ],
       Message:[''],
-      QueryType:' Zepcode Bootcamp Enquiry',
+      QueryType:'Zepcode Bootcamp Enquiry',
 
       enquiryFrom: ['Zepcode Bootcamp'],
     });
@@ -478,28 +480,47 @@ chapter: [
 
  
 
+    close(){
+    
+    this.formSubmitted = false;
 
+  }
   submit() {
+    this.loading=true
     this.formSubmitted = true;
     if (this.contactUsForm.invalid) {
+      this.loading=false
       return;
     }
     const UserData = { ...this.contactUsForm.value };
     this.service.addUserData(UserData).subscribe(
       (data) => {
         if (data.code === 'SUC-200') {
+          this.loading= false
           this.SubmitSuccessful = true;
           this.contactUsForm.reset();
           this.formSubmitted = false;
           this.showModal = false;
           Swal.fire("Submitted successfully");
-
+          Swal.fire({
+            title: "Submitted successfully",
+            
+         
+            confirmButtonText: "ok",
+          
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload()
+             
+            } 
+          });
           setTimeout(() => {
             this.SubmitSuccessful = false;
           }, 3000);
         }
       },
       (error) => {
+        this.loading=false
         this.errorMessage = error.error.error;
         console.log(error.error);
         if (error.error.code === 'ERR-400') {
@@ -512,8 +533,10 @@ chapter: [
   }
   
   submitform() {
+    this.loading=true
     this.formSubmittedbootcamp = true;
     if (this.contactUsbootcampForm.invalid) {
+      this.loading=false
       return;
     }
     this.disable=true
@@ -521,6 +544,7 @@ chapter: [
     this.service.addUserData(UserData).subscribe(
       (data) => {
         if (data.code === 'SUC-200') {
+          this.loading=false
           this.SubmitSuccessful = true;
           this.disable=true
 
@@ -533,7 +557,7 @@ chapter: [
       },
       (error) => {
         this.disable=false
-
+this.loading= false
         this.errorMessage = error.error.error;
         console.log(error.error);
         if (error.error.code === 'ERR-400') {
