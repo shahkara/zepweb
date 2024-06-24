@@ -24,10 +24,8 @@ export class BlogDetailsComponent  implements OnInit{
     this.service.getBlogBySlug(this.id).subscribe((data)=>{
       if(data.code=='SUC-200'){
         this.BlogData= data.blogData
-        console.log(this.BlogData.imageURL)
         this.updateMetaTags();
       }
-      console.log(data) 
     })
   }
 
