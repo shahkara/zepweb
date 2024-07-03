@@ -10,7 +10,7 @@ export class SeriveService {
   API_URL = 'https://api.oneticktechnologies.com/';
 
   constructor(private http:HttpClient) { }
-
+  
 
   addUserData(data: any): Observable<any> {
     return this.http.post<any>(`${this.API_URL}contact/addContactQuery`, data)
