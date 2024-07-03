@@ -85,9 +85,9 @@ export class BootcampComponent  implements OnInit{
     {name: 'Bootstrap'},
     {name: ' Mastering Git'},
     {name: ' Javascript Fundamental Concept'},
-    {name: ' Advacnced Javascript Concepts'},
+    {name: ' Advance Javascript Concepts'},
    
-    {name: ' Advanced System Design'},
+    {name: ' Advance System Design'},
     
    
     
@@ -130,7 +130,8 @@ export class BootcampComponent  implements OnInit{
     {name: ' 	Master Git for managing code and collaborating on team projects.'},
     {name: ' 	Excel in coding interviews with Data Structures and Algorithms training.'},
     {name: ' 	Understand SQL for effective database management.'},
-    {name: ' 	Build robust REST APIs using the Spring Boot framework.'},
+    {name: ' 	Create and build responsive UI design and screens.'},
+    {name: ' 	Build robust REST APIs using the Nodejs and express.'},
     {name: '  Explore AI tools to boost coding efficiency.'},
     {name: ' 	Learn system design for scalable and fault – tolerant systems.'},
     {name: ' 	Craft a compelling resume and GitHub profile to impress employers.'},
