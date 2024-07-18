@@ -7,6 +7,7 @@ import { ZepcodeContactComponent } from '../zepcode-contact/zepcode-contact.comp
 import { BootcampContactComponent } from '../bootcamp-contact/bootcamp-contact.component';
 import { BlogsComponent } from '../blogs/blogs.component';
 import { BlogDetailsComponent } from '../blog-details/blog-details.component';
+import { DigitalMarketingComponent } from '../digital-marketing/digital-marketing.component';
 
 const routes: Routes = [
 
@@ -37,7 +38,11 @@ const routes: Routes = [
  
     path:'blog_Details/:items',
     component:BlogDetailsComponent
-  }
+  },
+  {
+    path:'digitalMarketing',
+    component:DigitalMarketingComponent
+  },
 
 ];
 

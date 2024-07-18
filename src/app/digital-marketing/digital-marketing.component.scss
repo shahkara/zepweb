@@ -1,0 +1,268 @@
+
+
+@import url('/src/styles/fonts.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: "Poppins", sans-serif;
+
+}
+.footer li {
+    padding:  10px 0;
+
+}
+@media screen and (width:280px)  {
+    .logo{
+       width: 80px;
+    }
+    .mainHeading{
+        font-size: 40px;
+    }
+    .contacttext{
+        font-size: 30px;
+        padding: 5px 10px 5px 5px;
+    }
+    .input{
+        font-size: 14px;
+    }
+   } 
+   @media screen and (width:540px)  {
+    .service{
+        margin: 0  32px !important;
+        text-align: center;
+    }
+   }
+   
+   
+   
+   
+   .bootcampimage {
+    
+      //  width: 800px;
+       border:2px solid red;
+      //  background: green
+      //  height: 50px;
+   }
+   .bootcampimage img{
+    width: 100%;
+   }
+
+   @media screen and (min-width:200px) and (max-width: 1300px)  {
+
+   .contactImage{
+    height: 400px;
+   }
+}
+
+
+/* accordion.component.css */
+.accordion {
+    width: 100%;
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+  }
+  
+  .accordion-header.active {
+    background-color: #ddd;
+  }
+  
+  .accordion-content {
+    display: none;
+  
+   
+    border: 1px solid #ddd;
+  }
+  
+  .accordion-content.active {
+    display: block;
+  }
+  
+
+
+
+
+
+  // new css
+
+
+  .underline {
+    text-decoration: none; 
+    position: relative; 
+  }   
+
+ .underline:after {
+     position: absolute;
+     content: '';
+     height: 4px;
+     bottom: -20px; 
+
+
+   left: 0;
+     right: 0;
+   width: 15%;
+   background: purple;
+   background: linear-gradient(blue, purple);
+   border-radius: 10px;
+   
+   -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition:.5s;
+ }
+
+
+ .iEgdGs::before {
+  content: "";
+  position: absolute;
+  // z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+ height: 100%;
+  background-color: rgb(82, 15, 183);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  transform: skewX(-25deg) translateX(-70%);
+}
+.iEgdGs::after {
+  content: "";
+  // position: absolute;
+  // z-index: 1;
+  top: 70px;
+  left: 0px;
+  transform: translate(-30%, -20%);
+  width: 350px;
+  height: 350px;
+  border-radius: 200px;
+  background-color: rgba(61, 8, 139, 0.376);
+}
+.dpuhDx {
+  margin-top: 128px;
+  height: fit-content;
+}
+
+
+.iEgdGs {
+  position: relative;
+  overflow: hidden;
+}.iEgdG {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.eeExt {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(82, 15, 183);
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    box-shadow: rgba(82, 15, 183, 0.3) 0px 8px 9px 0px;
+}
+.eeExt::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgb(72, 196, 121);
+  position: absolute;
+  left: -30%;
+  top: 0px;
+  transform: translateZ(-1px);
+}
+// .hOFzYc::after {
+//   content: "";
+//   position: absolute;
+//   top: 8%;
+//   left: 13%;
+//   height: 100%;
+//   width: 100%;
+//   background-image: url('/assets/newbootcamp/certificatebgportrait.avif');
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border-radius: 12px;
+ 
+//   z-index: -1;
+// }
+.hOFzYc {
+  // position: relative;
+  // overflow: visible;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  border-radius: 15px;
+  
+}
+
+.enroll-button-wrap .details {
+  display: flex;
+  flex-flow: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 2px 5px;
+}
+
+.amount::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  background: url('/assets/newbootcamp/benefitunderline.svg') 0% 0%  no-repeat;
+}
+@media screen and (min-width:600px)  {
+
+.iEgdG::before {
+  content: "";
+  position: absolute;
+ 
+  width: 200vw;
+  height: 100%;
+  background-color: rgb(82, 15, 183);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  transform: skewX(-25deg) translateX(-70%);
+}
+}
+
+@media screen and (min-width:200px) and (max-width:600px) {
+ 
+  .iEgdG::before {
+   
+   
+    width: 120vw;
+  }
+  .Avail{
+    color: #ffb80a;
+  }
+}
+
+::ng-deep  .swal2-styled.swal2-confirm{
+  background-color: #f67139 !important;
+}
+::ng-deep .swal2-popup .swal2-title {
+
+  font-size: 14px !important;
+
+  margin: 16px 0 0.4em !important;
+
+}
+
+
+
+li{
+    list-style-type: none;
+}
