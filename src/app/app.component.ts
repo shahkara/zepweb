@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   // title = 'zepcode';
+  navbarOpen = false;
   constructor(
    
     private title: Title,
@@ -23,6 +24,14 @@ export class AppComponent implements OnInit{
       this.meta.updateTag({ name: 'description', content: ` Zepcode offers you the best Mern Full stack web development course in Faridabad. If you want to become a full stack developer, you can contact us.` });
     
     
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
+  closeNavbar() {
+    this.navbarOpen = false;
   }
 
 }

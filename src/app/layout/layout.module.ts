@@ -10,6 +10,7 @@ import {  ReactiveFormsModule }   from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BlogsComponent } from '../blogs/blogs.component';
 import { BlogDetailsComponent } from '../blog-details/blog-details.component';
+import { DigitalMarketingComponent } from '../digital-marketing/digital-marketing.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BlogDetailsComponent } from '../blog-details/blog-details.component';
     ZepcodeContactComponent,
     BootcampContactComponent,
     BlogsComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    DigitalMarketingComponent
   ],
   imports: [
     CommonModule,
