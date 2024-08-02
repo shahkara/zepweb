@@ -11,6 +11,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BlogsComponent } from '../blogs/blogs.component';
 import { BlogDetailsComponent } from '../blog-details/blog-details.component';
 import { DigitalMarketingComponent } from '../digital-marketing/digital-marketing.component';
+import { ThankyouComponent } from '../thankyou/thankyou.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DigitalMarketingComponent } from '../digital-marketing/digital-marketin
     BootcampContactComponent,
     BlogsComponent,
     BlogDetailsComponent,
-    DigitalMarketingComponent
+    DigitalMarketingComponent,
+    ThankyouComponent
   ],
   imports: [
     CommonModule,

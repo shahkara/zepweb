@@ -8,6 +8,7 @@ import { BootcampContactComponent } from '../bootcamp-contact/bootcamp-contact.c
 import { BlogsComponent } from '../blogs/blogs.component';
 import { BlogDetailsComponent } from '../blog-details/blog-details.component';
 import { DigitalMarketingComponent } from '../digital-marketing/digital-marketing.component';
+import { ThankyouComponent } from '../thankyou/thankyou.component';
 
 const routes: Routes = [
 
@@ -42,6 +43,9 @@ const routes: Routes = [
   {
     path:'digitalMarketing',
     component:DigitalMarketingComponent
+  },{
+    path:'thank-you',
+    component:ThankyouComponent
   },
 
 ];
