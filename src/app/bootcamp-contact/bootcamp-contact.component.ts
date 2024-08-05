@@ -65,7 +65,7 @@ export class BootcampContactComponent implements OnInit {
       },
       (error) => {
         this.errorMessage = error.error.error;
-        console.log(error.error);
+        // console.log(error.error);
         if (error.error.code === 'ERR-400') {
          
           Swal.fire(this.errorMessage);

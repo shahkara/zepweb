@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, Renderer2} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -9,6 +9,8 @@ import { SeriveService } from '../serive.service';
 import Swal from 'sweetalert2'
 import { initFlowbite } from 'flowbite'
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 
 
@@ -290,7 +292,7 @@ chapter: [
 {coursecount:7,
   name: 'SEO Algorithms',
 time:'3 week', 
-courseheading:'Learn SEO algorithms to enhance your your skills' ,
+courseheading:'Learn SEO algorithms to enhance  your skills' ,
 chapter: [
   { chaptername: "Google Panda", chapternumber: 1 },
   { chaptername: "Google Penguin ", chapternumber: 2 },
@@ -548,14 +550,20 @@ chapter: [
   SubmitSuccessful: boolean = false;
   loading: boolean = false;
   disable=false;
-
+  private static scriptAdded = false;
   constructor(
     private service: SeriveService,
     private formBuilder: FormBuilder,
-   
+    private title: Title,
+    private router: Router,
+    private renderer: Renderer2,
+    
     
   ) {}
   ngOnInit(): void {
+
+    this.title.setTitle('Digital Marketing Course in Faridabad - Zepcode')
+
     initFlowbite();
     this.LearningSupport=true
 
@@ -595,6 +603,23 @@ chapter: [
 
       enquiryFrom: ['Zepcode Bootcamp'],
     });
+    this.addGtagInlineScript()
+  }
+  addGtagInlineScript(): void {
+    if (DigitalMarketingComponent.scriptAdded) {
+      return;
+    }
+    const script = this.renderer.createElement('script');
+    script.type = 'text/javascript';
+    script.text = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'AW-11008461029');
+    `;
+    this.renderer.appendChild(document.head, script);
+    DigitalMarketingComponent.scriptAdded = true;
   }
 
   toggleAccordion(index: number): void {
@@ -643,19 +668,25 @@ chapter: [
           this.contactUsForm.reset();
           this.formSubmitted = false;
           this.showModal = false;
-          Swal.fire("Submitted successfully");
-          Swal.fire({
-            title: "Submitted successfully",
+          this.router.navigate(['thank-you']);
+          setTimeout(() => {
+            
+            window.location.reload()
+          }, 1000);
+
+          // Swal.fire("Submitted successfully");
+          // Swal.fire({
+          //   title: "Submitted successfully",
             
          
-            confirmButtonText: "ok",
+          //   confirmButtonText: "ok",
           
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location.reload()
+          // }).then((result) => {
+          //   if (result.isConfirmed) {
+          //     window.location.reload()
              
-            } 
-          });
+          //   } 
+          // });
           setTimeout(() => {
             this.SubmitSuccessful = false;
           }, 3000);
@@ -664,7 +695,7 @@ chapter: [
       (error) => {
         this.loading=false
         this.errorMessage = error.error.error;
-        console.log(error.error);
+        // console.log(error.error);
         if (error.error.code === 'ERR-400') {
          
           Swal.fire(this.errorMessage);
@@ -693,15 +724,20 @@ chapter: [
           this.contactUsbootcampForm.reset();
           this.formSubmittedbootcamp = false;
           this.showModal = false;
-
-          Swal.fire("Thankyou for showing your interest in our bootcamp. Our team will connect with you soon!");
+          this.router.navigate(['thank-you']);
+          setTimeout(() => {
+            
+            window.location.reload()
+          }, 1000);
+          // this.router.navigate(['thank-you']);
+          // Swal.fire("Thankyou for showing your interest in our bootcamp. Our team will connect with you soon!");
         }
       },
       (error) => {
         this.disable=false
 this.loading= false
         this.errorMessage = error.error.error;
-        console.log(error.error);
+        // console.log(error.error);
         if (error.error.code === 'ERR-400') {
          
           Swal.fire(this.errorMessage);

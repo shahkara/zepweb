@@ -9,13 +9,28 @@
 
 <url>
   <loc>https://zepcode.in/</loc>
-  <lastmod>2024-05-27T11:37:42+00:00</lastmod>
+  <lastmod>2024-07-22T06:06:25+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://zepcode.in/assets/newbootcamp/Brochure.pdf</loc>
-  <lastmod>2024-05-17T07:02:07+00:00</lastmod>
+  <loc>https://zepcode.in/blogs</loc>
+  <lastmod>2024-07-22T06:06:25+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zepcode.in/digitalMarketing</loc>
+  <lastmod>2024-07-22T06:06:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zepcode.in/assets/newbootcamp/Brochure.pdf</loc>
+  <lastmod>2024-07-20T09:51:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zepcode.in/assets/DMBrochure.pdf</loc>
+  <lastmod>2024-07-20T09:51:20+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 

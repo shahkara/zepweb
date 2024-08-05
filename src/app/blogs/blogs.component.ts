@@ -27,7 +27,7 @@ this.totalItems= data.totalItems
 this.itemsPerPage=data.itemsPerPage
 this.totalPages=data.totalPages
       }
-      console.log(data) 
+      // console.log(data) 
     })
   }
 
@@ -41,7 +41,7 @@ this.totalPages=data.totalPages
 
 
   gotoDetails(id:any){
-    console.log(id)
+    // console.log(id)
     this.route.navigate(['blog_Details',id])
   }
 }
