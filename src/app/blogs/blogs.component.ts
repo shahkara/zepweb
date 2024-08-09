@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 export class BlogsComponent implements OnInit {
   BlogData: any;
 
-    currentPage!: number;
+    currentPage: number=1;
     totalPages!: number;
     totalItems!:number; 
-    itemsPerPage!:number 
+    itemsPerPage!:number ;
+    
   constructor( private service:SeriveService, private route:Router ){}
   ngOnInit(): void {
    this.getblogs() 
@@ -23,6 +24,7 @@ export class BlogsComponent implements OnInit {
       if(data.code=='SUC-200'){
         this.BlogData= data.BlogData
         this.currentPage= data.page
+       
 this.totalItems= data.totalItems
 this.itemsPerPage=data.itemsPerPage
 this.totalPages=data.totalPages
@@ -41,7 +43,7 @@ this.totalPages=data.totalPages
 
 
   gotoDetails(id:any){
-    // console.log(id)
+    
     this.route.navigate(['blog_Details',id])
   }
 }

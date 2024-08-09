@@ -422,6 +422,7 @@ chapter: [
   formSubmittedbootcamp: boolean = false;
   SubmitSuccessful: boolean = false;
   loading: boolean = false;
+  IsApiCall: boolean = false;
   disable=false;
   private static scriptAdded = false;
   constructor(
@@ -503,9 +504,12 @@ chapter: [
     
     this.formSubmitted = false;
     this.contactUsForm.reset()
+  
 
   }
   submit() {
+   
+    this.IsApiCall=true
     this.loading=true
     this.formSubmitted = true;
     if (this.contactUsForm.invalid) {
@@ -521,6 +525,7 @@ chapter: [
           this.contactUsForm.reset();
           this.formSubmitted = false;
           this.showModal = false;
+          this.IsApiCall=false
           this.router.navigate(['thank-you']);
           setTimeout(() => {
             
