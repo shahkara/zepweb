@@ -509,12 +509,15 @@ chapter: [
   }
   submit() {
    
-    this.IsApiCall=true
+    
     this.loading=true
     this.formSubmitted = true;
     if (this.contactUsForm.invalid) {
       this.loading=false
       return;
+    }
+    if(this.contactUsForm.valid){
+      this.IsApiCall=true
     }
     const UserData = { ...this.contactUsForm.value };
     this.service.addUserData(UserData).subscribe(

@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SeriveService {
-  // API_URL = 'http://localhost:8000/';
-  API_URL = 'https://api.oneticktechnologies.com/';
+  API_URL = 'http://localhost:8000/';
+  // API_URL = 'https://api.oneticktechnologies.com/';
 
   constructor(private http:HttpClient) { }
   
