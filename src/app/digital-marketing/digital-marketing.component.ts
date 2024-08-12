@@ -549,6 +549,7 @@ chapter: [
   formSubmittedbootcamp: boolean = false;
   SubmitSuccessful: boolean = false;
   loading: boolean = false;
+  IsApiCall: boolean = false;
   disable=false;
   private static scriptAdded = false;
   constructor(
@@ -653,11 +654,15 @@ chapter: [
 
   }
   submit() {
+    
     this.loading=true
     this.formSubmitted = true;
     if (this.contactUsForm.invalid) {
       this.loading=false
       return;
+    }
+    if(this.contactUsForm.valid){
+      this.IsApiCall=true
     }
     const UserData = { ...this.contactUsForm.value };
     this.service.addUserData(UserData).subscribe(
@@ -667,6 +672,7 @@ chapter: [
           this.SubmitSuccessful = true;
           this.contactUsForm.reset();
           this.formSubmitted = false;
+          this.IsApiCall=false
           this.showModal = false;
           this.router.navigate(['thank-you']);
           setTimeout(() => {
