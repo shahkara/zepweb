@@ -14,7 +14,7 @@ export class ThankyouComponent  implements OnInit{
   ngOnInit(): void {
     setTimeout(() => {
     
-    
+    window.location.reload()
       this.location.back();
     }, 4000);
     this.addGtagInlineScript()
