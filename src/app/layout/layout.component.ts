@@ -7,6 +7,9 @@ import {
 } from '@angular/forms';
 import { SeriveService } from '../serive.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import { initFlowbite } from 'flowbite'
+
 
 interface slider {
   img: string;
@@ -30,7 +33,8 @@ export class LayoutComponent implements OnInit {
   formSubmitted: boolean = false;
   SubmitSuccessful: boolean = false;
   showModal = false;
-  
+  loading: boolean = false;
+  IsApiCall: boolean = false;
 
   slides: slider[] = [
     {img: '/assets/slider/image1.png'},
@@ -71,8 +75,10 @@ export class LayoutComponent implements OnInit {
 
 
   constructor(  private service: SeriveService,
-    private formBuilder: FormBuilder,){}
+    private formBuilder: FormBuilder,
+    private router: Router){}
   ngOnInit(): void {
+    initFlowbite();
     this.contactUsForm = this.formBuilder.group({
       firstname: ['', [Validators.required]],
       lastname: [''],
@@ -107,32 +113,65 @@ export class LayoutComponent implements OnInit {
   }
 
 
-
-
-
-   
+  close(){
+    
+    this.formSubmitted = false;
+    this.contactUsForm.reset()
   
 
+  }
+
+
   submit() {
+   
+    
+    this.loading=true
     this.formSubmitted = true;
     if (this.contactUsForm.invalid) {
+      this.loading=false
       return;
+    }
+    if(this.contactUsForm.valid){
+      this.IsApiCall=true
     }
     const UserData = { ...this.contactUsForm.value };
     this.service.addUserData(UserData).subscribe(
       (data) => {
         if (data.code === 'SUC-200') {
+          this.loading= false
+          this.IsApiCall=false
           this.SubmitSuccessful = true;
           this.contactUsForm.reset();
           this.formSubmitted = false;
-          this.showModal = false;
-
+         
+          
           setTimeout(() => {
+         
+            window.location.reload()
+          }, 1000);
+          this.router.navigate(['thank-you']);
+          // Swal.fire("Submitted successfully");
+          // Swal.fire({
+          //   title: "Submitted successfully",
+            
+         
+          //   confirmButtonText: "ok",
+          
+          // }).then((result) => {
+          //   if (result.isConfirmed) {
+          //     window.location.reload()
+             
+          //   } 
+          // });
+          setTimeout(() => {
+            this.IsApiCall=false
             this.SubmitSuccessful = false;
-          }, 5000);
+          }, 3000);
         }
       },
       (error) => {
+        this.loading=false
+        this.IsApiCall=false
         this.errorMessage = error.error.error;
         // console.log(error.error);
         if (error.error.code === 'ERR-400') {
@@ -144,7 +183,43 @@ export class LayoutComponent implements OnInit {
     );
   }
 
+
+   
+  
+
+  // submit() {
+  //   this.formSubmitted = true;
+  //   if (this.contactUsForm.invalid) {
+  //     return;
+  //   }
+  //   const UserData = { ...this.contactUsForm.value };
+  //   this.service.addUserData(UserData).subscribe(
+  //     (data) => {
+  //       if (data.code === 'SUC-200') {
+  //         this.SubmitSuccessful = true;
+  //         this.contactUsForm.reset();
+  //         this.formSubmitted = false;
+  //         this.showModal = false;
+
+  //         setTimeout(() => {
+  //           this.SubmitSuccessful = false;
+  //         }, 5000);
+  //       }
+  //     },
+  //     (error) => {
+  //       this.errorMessage = error.error.error;
+  //       // console.log(error.error);
+  //       if (error.error.code === 'ERR-400') {
+         
+  //         Swal.fire(this.errorMessage);
+  //         return;
+  //       }
+  //     }
+  //   );
+  // }
+
   closeToast() {
+    this.IsApiCall=false
     this.SubmitSuccessful = false;
   }
 
