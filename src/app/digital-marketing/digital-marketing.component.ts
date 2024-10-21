@@ -582,9 +582,9 @@ chapter: [
         ],
       ],
       Message:[''],
-      QueryType:'Zepcode Bootcamp Enquiry',
+      QueryType:'Digital Marketing Enquiry',
 
-      enquiryFrom: ['Zepcode Bootcamp'],
+      enquiryFrom: ['Digital Marketing'],
     }); 
     this.contactUsbootcampForm = this.formBuilder.group({
       firstname: ['', [Validators.required]],
@@ -600,9 +600,8 @@ chapter: [
         ],
       ],
       Message:[''],
-      QueryType:'Zepcode Bootcamp Enquiry',
-
-      enquiryFrom: ['Zepcode Bootcamp'],
+      QueryType:'Digital Marketing Enquiry',
+      enquiryFrom: ['Digital Marketing'],
     });
     this.addGtagInlineScript()
   }
