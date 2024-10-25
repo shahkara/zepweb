@@ -16,7 +16,7 @@ const routes: Routes = [
     path:'',
     component:LayoutComponent
   },{
-    path:'bootcamp',
+    path:'mern-stack-bootcamp',
     component:BootcampComponent
   },{
     path:'contactUs',
