@@ -9,7 +9,7 @@ import { SeriveService } from '../serive.service';
 import Swal from 'sweetalert2'
 import { initFlowbite } from 'flowbite'
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 
@@ -558,12 +558,14 @@ chapter: [
     private title: Title,
     private router: Router,
     private renderer: Renderer2,
+    private meta: Meta,
     
     
   ) {}
   ngOnInit(): void {
+this.updateMetaTags()
 
-    this.title.setTitle('Digital Marketing Course in Faridabad - Zepcode')
+    this.title.setTitle('Digital Marketing Bootcamp in Faridabad - Zepcode')
 
     initFlowbite();
     this.LearningSupport=true
@@ -605,6 +607,13 @@ chapter: [
     });
     this.addGtagInlineScript()
   }
+
+
+  updateMetaTags() {
+   
+    this.meta.updateTag({ name: 'description', content:'Zepcode offers the best digital marketing training in Faridabad, providing expert-led, hands-on learning to equip you with real-world digital skills.', });
+  }
+  
   addGtagInlineScript(): void {
     if (DigitalMarketingComponent.scriptAdded) {
       return;
