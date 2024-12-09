@@ -76,7 +76,7 @@
       <div class="col-span-3">
         <div class="grid sm:grid-cols-4 grid-cols-2 sm:px-8 pt-4">
           <div *ngFor="let item of skills" class="my-2">
-            <h1 class="flex text-sm">
+            <p class="flex text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -92,7 +92,7 @@
               </svg>
 
               {{ item.name }}
-            </h1>
+            </p>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
       <div class="col-span-3">
         <div class="grid sm:px-8 pt-4">
           <div *ngFor="let item of Outcomes" class="my-2">
-            <h1 class="flex text-sm">
+            <p class="flex text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -132,7 +132,7 @@
               </svg>
 
              <span class=""> {{ item.name }}</span>
-            </h1>
+            </p>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@
     <div class="relative rounded-r-lg bg-white shadow-lg mt-5 pb-12">
       <h4 class="font-semibold text-2xl pl-10 pt-3">Learning effort</h4>
 
-      <h1 class="flex pl-10 p-4 mt-5">
+      <p class="flex pl-10 p-4 mt-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -178,16 +178,16 @@
         >
           6 month program</span
         >
-      </h1>
+      </p>
 
       <h2 class="pl-10 my-3 ">
         <span class="font-semibold text-4xl ">40</span>hrs/week learning 👩‍💻
       </h2>
-      <h1
+      <p
         class="text-center text-purple-800 font-semibold bg-[#e9e1f6] p-4 rounded-b-lg absolute bottom-0 w-full"
       >
         No prior coding experience required
-      </h1>
+    </p>
 
       <div
         class="absolute h-10 w-10 -left-4 top-2 bg-purple-800 rounded-full p-3"
@@ -436,7 +436,7 @@
       <div class="rounded-xl shadow-sm bg-[#f8f8f9] px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 p-1 py-3 my-2">
           <div class="flex items-center">
-            <h1>Download Brochure</h1>
+            <p>Download Brochure</p>
           </div>
           <div class="flex mt-5 sm:mt-0 sm:justify-end items-center font-semibold">
             <button
@@ -496,9 +496,9 @@
                     </div>
                   </div>
                   <div class="grow text-left sm:pl-5">
-                    <h1 class="font-semibold text-xl mb-3">
+                    <p class="font-semibold text-xl mb-3">
                       {{item.name}}
-                    </h1>
+                    </p>
                     <!-- <div class="grid gap-2 sm:gap-0 grid-cols-1 sm:grid-cols-3"> -->
                     <div class="grid gap-2 sm:gap-0 grid-cols-1">
 
@@ -562,9 +562,9 @@
       >
         <div class="flex justify-between">
           <div class="pl-6 pt-3">
-            <h1 class="font-semibold text-xl mb-3">
+            <p class="font-semibold text-xl mb-3">
               Zepcode’s Placement Assistance
-            </h1>
+            </p>
 
             <p>
               Our career counselors are here to help, whenever you need them
@@ -697,7 +697,7 @@
         </div>
 
         <div class="bg-white rounded-lg p-6">
-          <h1 class="text-xl font-semibold my-3">Speak to career counselor</h1>
+          <p class="text-xl font-semibold my-3">Speak to career counselor</p>
           <p class="my-3">Book a session, ask your doubts away</p>
 
           <form [formGroup]="contactUsbootcampForm" (ngSubmit)="submitform()">
@@ -960,8 +960,8 @@
         <img src="/assets/newbootcamp/mentor.avif" class="w-14 h-14 mr-7">
         <div class="p-1 rounded-full w-6 top-12 left-4  absolute bg-[#520fb7]"><img  src="/assets/newbootcamp/star.png"></div>
         <div>
-          <h1 class="text-[#5218bb]  text-xl lg:text-2xl font-semibold">
-            Get help from hundreds of great mentors to answer your doubts          </h1>
+          <p class="text-[#5218bb]  text-xl lg:text-2xl font-semibold">
+            Get help from hundreds of great mentors to answer your doubts          </p>
           <p class=" text-sm">Get yourself upskilled with the help of these mentors</p>
         </div>
       </div>
@@ -998,7 +998,7 @@
         </p>
         <hr class="mt-2">
         <div class="flex justify-between py-3">
-          <h1>{{item.experiennce}} </h1>
+          <p>{{item.experiennce}} </p>
           
           <!-- <img src="/assets/newbootcamp/linkedincolored.svg" class="w-6" alt=""> -->
         </div>
@@ -1131,7 +1131,7 @@
             <p class="text-xl  break-all font-semibold text-gray-900">Features</p>
           </div>
         </div>
-        <h1 class="text-4xl font-semibold px-4 text-gray-600 my-3 mb-8"> ₹ FEE</h1>
+        <p class="text-4xl font-semibold px-4 text-gray-600 my-3 mb-8"> ₹ FEE</p>
 
   
         <ul class="px-4">
@@ -1917,8 +1917,8 @@
       Station, Faridabad , Haryana (121006)  <p class="sm:text-right mt-3">+91 88008 30277</p>
   </div>
   <div class="pt-4 md:pt-2 xl:mt-10 sm:pt-10 text-gray-400">
-    <h1 class="text-gray-400 font-semibold sm:text-center text-left cursor-pointer" routerLink="blogs" >Blogs</h1>
-    <h1 class="text-gray-400 font-semibold sm:text-center text-left cursor-pointer" routerLink="digitalMarketing" >Digital Marketing</h1>
+    <p class="text-gray-400 font-semibold sm:text-center text-left cursor-pointer" routerLink="blogs" >Blogs</p>
+    <p class="text-gray-400 font-semibold sm:text-center text-left cursor-pointer" routerLink="digitalMarketing" >Digital Marketing</p>
    
   </div>
   </div>
